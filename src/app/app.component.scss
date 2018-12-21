@@ -27,15 +27,28 @@
 }
 
 .box-shadow {
-    box-shadow: 0 -0.1rem 0.7rem rgba(0, 0, 0, .05);
+    box-shadow: 0 -0.15rem .6rem rgba(0, 0, 0, .06);
 }
 
 [role="main"] {
     margin: 150px 0 50px 0;
 }
 
+.navbar-toggler {
+    border: none;
+    margin: auto;
+}
+
+.navbar-toggler-icon {
+    font-size: 1.5rem;
+}
+
 @media (max-width: 576px) {
     .nav-master {
         padding: 25px;
+    }
+
+    [role="main"] {
+        margin-top: 90px;
     }
 }
