@@ -1,0 +1,36 @@
+.nav-master {
+    margin-bottom: 50px;
+    padding: 0;
+    text-align: center;
+}
+
+.nav-item {
+    padding: 25px 20px;
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 1.1rem;
+    /*color: #3B3B3B !important;*/
+}
+
+/*.nav-item .nav-link {
+    color: #3B3B3B;
+}*/
+
+.nav-item:hover .nav-link {
+    /*color: #8e8e8e;*/
+    transition: all .3s ease 0s;
+}
+
+.content {
+    
+}
+
+.box-shadow {
+    box-shadow: 0 -.15rem 0.7rem rgba(0, 0, 0, .05);
+}
+
+@media (max-width: 576px) {
+    .nav-master {
+        padding: 25px 0;
+    }
+}
