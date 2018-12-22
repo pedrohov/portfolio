@@ -1,7 +1,6 @@
 export class Project {
-    id: number;
     title: string;
     description: string;
-    tags: number[];
+    tags: string[];
     thumbnail: string;
 }

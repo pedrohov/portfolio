@@ -1,7 +1,8 @@
-<div class="container">
+<div class="container" [@portfolioTrigger]>
     <div class="row portfolio">
         <div *ngFor="let project of projects" 
-             class="col-lg-4 col-md-6 col-sm-12 p-0">
+             class="col-lg-4 col-md-6 col-sm-12 p-0"
+             routerLink="/project/{{ project.title }}">
             <div class="project-card">
                 <img [src]="project.thumbnail" class="img-fluid" alt=""/>
                 <div class="project-card-wrapper" >
