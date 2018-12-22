@@ -7,6 +7,9 @@
     top: 0;
     padding: 2rem;
     position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
 }
 
 .project-card img,
@@ -34,4 +37,25 @@
 
 .project-card:hover .project-card-title {
     color: #000;
+}
+
+$descriptionHeight: 250px;
+
+.project-card:hover .project-card-description {
+    margin: -2rem;
+}
+
+.project-card-description {
+    margin: -2rem -2rem calc(-2rem - #{$descriptionHeight}) -2rem ;
+    bottom: 2rem;
+    padding: 2rem;
+    width: 100%;
+    height: $descriptionHeight;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    transition: all .5s ease 0s;
+}
+
+.project-card-description p {
+    color: #fff;
 }

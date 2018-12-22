@@ -1,12 +1,17 @@
-<div class="row portfolio">
-    <div *ngFor="let project of projects" 
-         class="col-lg-4 col-md-6 col-sm-12 p-0">
-        <div class="project-card">
-            <img [src]="project.thumbnail" class="img-fluid" alt=""/>
-            <div class="project-card-wrapper" >
-                
-                <p class="project-card-title">{{ project.title }}</p>
+<div class="container">
+    <div class="row portfolio">
+        <div *ngFor="let project of projects" 
+             class="col-lg-4 col-md-6 col-sm-12 p-0">
+            <div class="project-card">
+                <img [src]="project.thumbnail" class="img-fluid" alt=""/>
+                <div class="project-card-wrapper" >
+                    
+                    <p class="project-card-title">{{ project.title }}</p>
+                    <div class="project-card-description">
+                        <p>{{ project.description }}</p>
+                    </div>
 
+                </div>
             </div>
         </div>
     </div>
