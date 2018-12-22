@@ -48,4 +48,9 @@ export class ProjectDetailsComponent implements OnInit {
       .subscribe(project => this.project = project);
   }
 
+  getSource(): string {
+    console.log(this.project.thumbnail.substr(0, this.project.thumbnail.indexOf('-')))
+    return this.project.thumbnail.substr(0, this.project.thumbnail.indexOf('-')) + '.jpg';
+  }
+
 }

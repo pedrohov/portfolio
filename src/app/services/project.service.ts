@@ -10,7 +10,7 @@ export class ProjectService {
 
   projects: Project[] = [
       {title: 'SLAM Prototype', description: 'Projeto 01', tags: ['Python', 'WebSockets'], thumbnail: './assets/images/slam-thumb.jpg'},
-      {title: 'IFlight Controller', description: 'Projeto 02', tags: ['Python', 'WebSockets'], thumbnail: './assets/images/iflight-thumb.jpeg'},
+      {title: 'IFlight Controller', description: 'Projeto 02', tags: ['Python', 'WebSockets'], thumbnail: './assets/images/iflight-thumb.jpg'},
       {title: 'Scrabble', description: 'Projeto 03', tags: ['Python'], thumbnail: './assets/images/scrabble-thumb.jpg'},
       {title: 'PRYSM', description: 'Projeto 04', tags: ['JavaScript'], thumbnail: './assets/images/prysm-thumb.jpg'},
       {title: 'Cayman Solar', description: 'Projeto 05', tags: ['HTML/CSS'], thumbnail: './assets/images/caymans-thumb.jpg'},
