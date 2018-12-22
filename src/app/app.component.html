@@ -15,8 +15,8 @@
     </div>
 </nav>
 
-<main role="main">
-    <router-outlet></router-outlet>
+<main role="main" [@routeAnim]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
 </main>
 
 

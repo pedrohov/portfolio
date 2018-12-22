@@ -4,7 +4,7 @@ import { Location } from '@angular/common';
 import { Project } from '../model/project';
 import { ProjectService } from '../services/project.service';
 
-import { trigger, style, transition, animate, query, stagger } from '@angular/animations';
+import { trigger, style, transition, animate, query, stagger, group } from '@angular/animations';
 
 @Component({
   selector: 'app-project-details',
@@ -13,10 +13,16 @@ import { trigger, style, transition, animate, query, stagger } from '@angular/an
   animations: [
     trigger('fadeInRight', [
       transition('* => *', [
-        query('img', [
-          style({ opacity: 0/*, paddingLeft: '100vw' */}),
-          animate('500ms ease-in-out')
+        group([
+          query('img', [
+            style({ opacity: 0, marginLeft: '-100vw', transform: 'translateX(100%)' }),
+            animate('500ms ease-in-out')
+          ]),
+          query('.project-wrapper', [
+            style({ opacity: 0, transform: 'translateX(50%)' }),
+            animate('500ms ease-in-out')
           ])
+        ])
       ]),
     ]),
   ]
