@@ -25,6 +25,8 @@ html { scroll-behavior: smooth; }
   background: #4F4F4F; 
 }
 
-button:focus {
+button:focus,
+img:focus,
+div:focus {
     outline: 0;
 }

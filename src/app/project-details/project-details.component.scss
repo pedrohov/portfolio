@@ -10,6 +10,8 @@ img {
     height: calc(100vh - 93px);
     width: 100%;
     margin: 0;
+    object-fit: cover;
+    object-position: center;
 }
 
 .project-wrapper {
@@ -25,4 +27,18 @@ img {
 
 .project-description {
     text-align: justify;
+}
+
+@media (max-width: 576px) {
+    .header img {
+        height: 250px;
+        object-position: top;
+    }
+}
+
+@media (max-width: 992px) {
+    .header img {
+        height: 400px;
+        object-position: top;
+    }
 }
