@@ -26,7 +26,7 @@
 }
 
 [role="main"] {
-    margin: 150px 0 0 0;
+    margin: 95px 0 0 0;
 }
 
 .navbar-toggler {
@@ -36,6 +36,17 @@
 
 .navbar-toggler-icon {
     font-size: 1.5rem;
+}
+
+.row {
+    width: 100%;
+    margin: 0;
+}
+
+.footer {
+    background-color: #4f5faf;
+    padding: 2.5rem 4rem;
+    color: #fff;
 }
 
 @media (max-width: 576px) {

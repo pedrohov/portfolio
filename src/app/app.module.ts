@@ -11,6 +11,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { AboutComponent } from './about/about.component';
 import { TagFilterPipe } from './pipes/tag-filter.pipe';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TagFilterPipe } from './pipes/tag-filter.pipe';
     ProjectDetailsComponent,
     PortfolioComponent,
     AboutComponent,
-    TagFilterPipe
+    TagFilterPipe,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

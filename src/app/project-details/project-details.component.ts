@@ -14,11 +14,11 @@ import { trigger, style, transition, animate, query, stagger, group } from '@ang
     trigger('fadeInRight', [
       transition('* => *', [
         group([
-          query('img', [
-            style({ opacity: 0, marginLeft: '-100vw', transform: 'translateX(100%)' }),
+          query('.project-wrapper', [
+            style({ opacity: 0, transform: 'translateX(-50%)' }),
             animate('500ms ease-in-out')
           ]),
-          query('.project-wrapper', [
+          query('img', [
             style({ opacity: 0, transform: 'translateX(50%)' }),
             animate('500ms ease-in-out')
           ])

@@ -8,11 +8,12 @@ $cardHeight: 500px;
 }
 
 .container {
-    margin-bottom: 50px;
+    margin: 93px auto 50px;
 }
 
 .tags {
-    margin-bottom: 20px;
+    /* Actual margin-top + nav height */
+    margin: calc(93px + 50px) 0 20px;
 }
 
 .project-card-wrapper {
