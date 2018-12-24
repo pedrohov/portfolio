@@ -44,7 +44,7 @@ $cardHeight: 500px;
 .project-card img {
     height: auto;
     transform: scale(1.01);
-    filter: brightness(40%) blur(0px);
+    filter: brightness(50%) blur(0px);
     object-fit: cover;
     object-position: center;
 }
@@ -81,7 +81,7 @@ $descriptionHeight: 250px;
 
 @media (max-width: 576px) {
     .container {
-        margin-bottom: 0;
+        margin: 0 auto;
     }
 
     .tags {

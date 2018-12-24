@@ -17,10 +17,23 @@
     margin: 0.4rem 1rem;
     text-transform: uppercase;
     border: 1px solid #4f4f4f;
+    cursor: pointer;
+
+    transition: all .3s ease 0s;
+}
+
+.header li:hover {
+    background: #7f7f7f;
+    border: 1px solid #fff;
+}
+
+.header li:hover a {
+    color: #fff;
 }
 
 .header li a {
     color: #4f4f4f;
+    text-decoration: none;
 }
 
 .title {

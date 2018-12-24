@@ -7,7 +7,7 @@ import { ProjectDetailsComponent } from './project-details/project-details.compo
 
 const routes: Routes = [
     { path: '', component: HomeComponent, data: { animation: 'Home' } },
-    { path: 'portfolio', component: PortfolioComponent, data: { animation: 'Portfolio' } },
+    { path: 'projects', component: PortfolioComponent, data: { animation: 'Portfolio' } },
     { path: 'project/:title', component: ProjectDetailsComponent, data: { animation: 'Description' } },
     { path: '', redirectTo: '/', pathMatch: 'full' }
 ];
