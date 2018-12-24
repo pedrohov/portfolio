@@ -9,10 +9,10 @@ import { Tag } from '../model/tag';
 export class TagService {
 
   tags: Tag[] = [
-    { name: 'Python', color: 'yellow' },
-    { name: 'JavaScript', color: 'blue' },
-    { name: 'HTML/CSS', color: 'green' },
-    { name: 'WebSockets', color: 'red' }
+    { name: 'Python', color: 'yellow', selected: true },
+    { name: 'JavaScript', color: 'blue', selected: true },
+    { name: 'HTML/CSS', color: 'green', selected: true },
+    { name: 'WebSockets', color: 'red', selected: true }
   ];
 
   constructor() { }

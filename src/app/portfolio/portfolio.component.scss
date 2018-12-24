@@ -1,5 +1,18 @@
+$cardHeight: 500px;
+
+.row {
+    /*width: 100%;
+    max-height: $cardHeight;
+    overflow-y: hidden;
+    padding: 0;*/
+}
+
 .container {
     margin-bottom: 50px;
+}
+
+.tags {
+    margin-bottom: 20px;
 }
 
 .project-card-wrapper {
@@ -14,9 +27,8 @@
 
 .project-card img,
 .project-card {
-    width: 100%;
-    min-height: 500px;
-    transition: all .5s ease 0s;
+    min-height: $cardHeight;
+    transition: all .3s ease 0s;
     margin: 0;
     overflow: hidden;
 }
@@ -30,22 +42,22 @@
 
 .project-card img {
     height: auto;
-    transform: scale(1) rotate(0deg);
+    transform: scale(1.01);
     filter: brightness(40%) blur(0px);
     object-fit: cover;
     object-position: center;
 }
 
 .project-card:hover img {
-    filter: brightness(100%) blur(3px);
-    transform: scale(1.03);
+    transform: scale(1.07);
+    filter: brightness(100%) blur(2px);
 }
 
 .project-card:hover .project-card-title {
     color: #000;
 }
 
-$descriptionHeight: 400px;
+$descriptionHeight: 250px;
 
 .project-card:hover .project-card-description {
     margin: -2rem;
@@ -69,5 +81,10 @@ $descriptionHeight: 400px;
 @media (max-width: 576px) {
     .container {
         margin-bottom: 0;
+    }
+
+    .tags {
+        margin-top: 20px;
+        justify-content: center;
     }
 }

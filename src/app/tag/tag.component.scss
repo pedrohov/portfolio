@@ -1,0 +1,23 @@
+.tag {
+    padding: 5px 10px;
+    border: 1px solid #E0E1E1;
+    width: auto;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: -1px;
+    transition: all .3s ease 0s;
+}
+
+.tag:fst-child {
+    margin-right: 0;
+}
+
+.tag:hover {
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, .2);
+    transform: translateY(-5%);
+}
+
+.disabled {
+    color: #E0E1E1;
+}

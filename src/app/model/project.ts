@@ -3,4 +3,5 @@ export class Project {
     description: string;
     tags: string[];
     thumbnail: string;
+    website: string;
 }

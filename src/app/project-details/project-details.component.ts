@@ -36,7 +36,7 @@ export class ProjectDetailsComponent implements OnInit {
     private route: ActivatedRoute,
     private projectService: ProjectService,
     private location: Location
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getProject();

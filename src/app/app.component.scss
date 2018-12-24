@@ -1,5 +1,4 @@
 .nav-master {
-    margin-bottom: 50px;
     padding: 0;
     text-align: center;
     background-color: #fff;
@@ -42,9 +41,14 @@
 @media (max-width: 576px) {
     .nav-master {
         padding: 25px;
+        margin: 0;
     }
 
     [role="main"] {
-        margin-top: 90px;
+        margin: 0;
+    }
+
+    .fixed-top {
+        position: relative;
     }
 }

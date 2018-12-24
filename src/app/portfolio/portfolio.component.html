@@ -1,6 +1,10 @@
-<div class="container" [@portfolioTrigger]>
-    <div class="row portfolio justify-content-center">
-        <div *ngFor="let project of projects" 
+<div class="container">
+    <div class="row tags" [@portfolioTrigger]>
+        <app-tag *ngFor="let tag of tags" [tag]="tag"></app-tag>
+    </div>
+
+    <div class="row portfolio" [@portfolioTrigger]>
+        <div *ngFor="let project of projects | tagFilter: getSelectedTags()" 
              class="col-lg-4 col-md-6 col-sm-12 p-0"
              routerLink="/project/{{ project.title }}">
             <div class="project-card">
