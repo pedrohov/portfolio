@@ -8,6 +8,7 @@
 
 .header ul {
     margin: 2.5rem 0;
+    padding: 0;
     list-style: none;
 }
 
@@ -22,8 +23,12 @@
     transition: all .3s ease 0s;
 }
 
+.header li:focus {
+    outline: none;
+}
+
 .header li:hover {
-    background: #7f7f7f;
+    background: #764bc4;
     border: 1px solid #fff;
 }
 
@@ -40,9 +45,11 @@
     font-family: 'Roboto';
     font-size: 3rem;
     color: #414141;
+    line-height: 3rem;
 }
 
 .subtitle {
+    padding-top: .5rem;
     color: #7f7f7f;
     font-size: 1.35rem;
 }

@@ -6,7 +6,7 @@
     <div class="row portfolio" [@portfolioTrigger]>
         <div *ngFor="let project of projects | tagFilter: getSelectedTags()" 
              class="col-lg-3 col-md-4 col-sm-12 p-0"
-             routerLink="/project/{{ project.title }}">
+             routerLink="/projects/{{ project.title }}">
             <div class="project-card">
                 <img [src]="project.thumbnail" class="img-fluid" alt=""/>
                 <div class="project-card-wrapper" >
