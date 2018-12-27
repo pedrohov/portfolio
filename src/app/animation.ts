@@ -27,7 +27,7 @@ export const slideInAnimation =
       ]),
       query(':enter', animateChild(), {optional: true}),
     ]),*/
-    transition('Portfolio => Home', [
+    /*transition('Portfolio => Home', [
       style({ position: 'relative' }),
       query(':enter, :leave', [
         style({
@@ -98,5 +98,5 @@ export const slideInAnimation =
         ], {optional: true})
       ]),
       query(':enter', animateChild(), {optional: true}),
-    ]),
+    ]),*/
   ]);

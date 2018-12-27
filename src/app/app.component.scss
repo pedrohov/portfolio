@@ -7,13 +7,17 @@
 .nav-item {
     padding: 25px 20px;
     font-family: 'Roboto';
-    font-weight: 600;
+    font-weight: 450;
     font-size: 1.1rem;
     /*color: #3B3B3B !important;*/
 }
 
+.nav-item a {
+    color: #A9AFBB;
+}
+
 a.active {
-    color: #414141 !important;
+    color: rgba(0, 0, 0, .5) !important;
 }
 
 /*.nav-item .nav-link {
@@ -31,6 +35,8 @@ a.active {
 
 [role="main"] {
     margin: 93px 0 0 0;
+    height: calc(100% - 93px);
+    height: calc(100vh - 93px);
 }
 
 .navbar-toggler {

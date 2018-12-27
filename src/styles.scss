@@ -3,6 +3,16 @@
 @import '~bootstrap/scss/bootstrap-grid';
 @import '~bootstrap/scss/bootstrap';
 
+@font-face {
+  font-family: SourceSansPro;
+  src: url(assets/fonts/SourceSansPro-Regular.ttf) format("opentype");
+}
+
+@font-face {
+  font-family: SourceSansProLight;
+  src: url(assets/fonts/SourceSansPro-Light.ttf) format("opentype");
+}
+
 html { scroll-behavior: smooth; }
 
 /* width */
