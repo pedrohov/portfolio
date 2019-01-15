@@ -4,4 +4,7 @@ export class Project {
     tags: string[];
     thumbnail: string;
     website: string;
+    content: string;
+    tech_concepts: string[];
+    pictures: string[];
 }

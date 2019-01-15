@@ -12,7 +12,9 @@ export class TagService {
     { name: 'Python', color: 'yellow', selected: true },
     { name: 'JavaScript', color: 'blue', selected: true },
     { name: 'HTML/CSS', color: 'green', selected: true },
-    { name: 'WebSockets', color: 'red', selected: true }
+    { name: 'WebSockets', color: 'red', selected: true },
+    { name: 'React Native', color: 'red', selected: true },
+    { name: 'Arduino', color: 'red', selected: true }
   ];
 
   constructor() { }

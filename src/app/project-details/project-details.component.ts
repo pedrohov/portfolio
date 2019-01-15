@@ -31,6 +31,8 @@ import { trigger, style, transition, animate, query, stagger, group } from '@ang
 export class ProjectDetailsComponent implements OnInit {
 
   project: Project;
+  selected: String;
+  changed: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -40,6 +42,8 @@ export class ProjectDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.getProject();
+    this.selected = this.getSource();
+    this.changed = false;
   }
 
   getProject(): void {
@@ -51,6 +55,12 @@ export class ProjectDetailsComponent implements OnInit {
   getSource(): string {
     console.log(this.project.thumbnail.substr(0, this.project.thumbnail.indexOf('-')))
     return this.project.thumbnail.substr(0, this.project.thumbnail.indexOf('-')) + '.jpg';
+  }
+
+  changeImage(pic): void {
+    this.selected = pic;
+    this.changed = true;
+    console.log(this.selected);
   }
 
 }

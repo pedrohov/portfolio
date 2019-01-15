@@ -8,13 +8,32 @@
     right: 0;
 }
 
-img {
+h2 {
+    font-family: 'Montserrat';
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    margin-top: 1rem;
+    font-size: 20px;
+}
+
+.header img {
     height: 100vh;
-    width: 100%;
-    margin: 0;
     object-fit: cover;
-    object-position: center;
-    margin-top: -3px;
+    object-position: middle;
+}
+
+.fitImg {
+    width: 100%;
+    height: auto !important;
+    object-fit: fit !important;
+}
+
+.small-img {
+    width: 100%;
+    height: auto;
 }
 
 .project-wrapper {
@@ -22,14 +41,22 @@ img {
     color: #4F4F4F;
 }
 
-.project-title {
-    font-family: 'Montserrat';
-    font-size: 22px;
-    font-weight: bold;
-}
-
 .project-description {
     text-align: justify;
+}
+
+.project-picture {
+   /* width: 100%;
+    margin: 0 auto;
+    text-align: center;*/
+}
+
+.project-picture img {
+    max-width: 150px;
+    max-height: 150px;
+    margin: 0 2px 2px 0;
+    display: inline-block;
+    cursor: pointer;
 }
 
 @media (max-width: 576px) {
