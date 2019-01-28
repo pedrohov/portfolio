@@ -1,4 +1,4 @@
-$cardHeight: 500px;
+$cardHeight: 300px;
 
 .row {
     /*width: 100%;
@@ -26,11 +26,10 @@ $cardHeight: 500px;
     height: 100%;
 }
 
-.project-card img,
 .project-card {
     min-height: $cardHeight;
     transition: all .3s ease 0s;
-    margin: 0;
+    margin: 0 5px 5px 0;
     overflow: hidden;
 }
 
@@ -38,7 +37,7 @@ $cardHeight: 500px;
     color: #fff;
     font-family: 'Montserrat';
     font-size: 1.2rem;
-
+    font-weight: bold;
 }
 
 .project-card img {
@@ -47,6 +46,11 @@ $cardHeight: 500px;
     filter: brightness(50%) blur(0px);
     object-fit: cover;
     object-position: center;
+
+    min-height: $cardHeight;
+    transition: all .3s ease 0s;
+    margin: 0;
+    overflow: hidden;
 }
 
 .project-card:hover img {
@@ -54,15 +58,15 @@ $cardHeight: 500px;
     filter: brightness(100%) blur(2px);
 }
 
-.project-card:hover .project-card-title {
-    color: #000;
-}
+/*.project-card:hover .project-card-title {
+    color: #fff;
+}*/
 
-$descriptionHeight: 250px;
+$descriptionHeight: $cardHeight;
 
 .project-card:hover .project-card-description {
-    margin: -2rem;
-    font-size: 15px;
+    margin: -2rem -2rem calc(-2rem + 5px) calc(-2rem - 5px);
+    opacity: 1;
 }
 
 .project-card-description {
@@ -73,7 +77,9 @@ $descriptionHeight: 250px;
     height: $descriptionHeight;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.6);
-    transition: all .5s ease 0s;
+    transition: all .5s ease-in-out 0s;
+    font-size: 15px;
+    opacity: 0;
 }
 
 .project-card-description p {
@@ -83,6 +89,10 @@ $descriptionHeight: 250px;
 @media (max-width: 576px) {
     .container {
         margin: 0 auto;
+    }
+
+    .project-card {
+        margin: 0;
     }
 
     .tags {

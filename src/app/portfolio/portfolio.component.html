@@ -5,14 +5,14 @@
 
     <div class="row portfolio" [@portfolioTrigger]>
         <div *ngFor="let project of projects | tagFilter: getSelectedTags()" 
-             class="col-lg-3 col-md-4 col-sm-12 p-0"
+             class="col-lg-4 col-md-6 col-sm-12 p-0"
              routerLink="/projects/{{ project.title }}">
             <div class="project-card">
                 <img [src]="project.thumbnail" class="img-fluid" alt=""/>
                 <div class="project-card-wrapper" >
                     
-                    <p class="project-card-title">{{ project.title }}</p>
                     <div class="project-card-description">
+                        <p class="project-card-title">{{ project.title }}</p>
                         <p>{{ project.description }}</p>
                     </div>
 

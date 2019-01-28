@@ -8,7 +8,7 @@
             <p class="project-description">
                 {{ project.content }}
             </p>
-            <a href="{{ project.website }}" target="_blank">Ver mais sobre este projeto</a>
+            <a *ngIf="project.website.length > 0" href="{{ project.website }}" target="_blank">Ver mais sobre este projeto</a>
             <h4>Tecnologias e Conceitos utilizados:</h4>
             <ul>
                 <li *ngFor="let concept of project.tech_concepts">
