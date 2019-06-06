@@ -6,7 +6,7 @@
 
 .nav-item {
     padding: 25px 20px;
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-weight: 450;
     font-size: 1.1rem;
     /*color: #3B3B3B !important;*/
@@ -20,12 +20,7 @@ a.active {
     color: rgba(0, 0, 0, .65) !important;
 }
 
-/*.nav-item .nav-link {
-    color: #3B3B3B;
-}*/
-
 .nav-item:hover .nav-link {
-    /*color: #8e8e8e;*/
     transition: all .3s ease 0s;
 }
 

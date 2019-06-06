@@ -18,6 +18,12 @@ import { trigger, style, transition, animate, query, stagger, animateChild } fro
           stagger(200, [animate('350ms ease-in-out'), animateChild()])
         ])
       ]),
+    ]),
+    trigger('fadeTrigger', [
+      transition('* => *', [
+          style({ opacity: 0 }),
+          animate('750ms ease-in-out'), animateChild()
+      ]),
     ])
   ]
 })

@@ -3,7 +3,7 @@
         <app-tag *ngFor="let tag of tags" [tag]="tag"></app-tag>
     </div>
 
-    <div class="row portfolio" [@portfolioTrigger]>
+    <div class="row portfolio" [@fadeTrigger]>
         <div *ngFor="let project of projects | tagFilter: getSelectedTags()" 
              class="col-lg-4 col-md-6 col-sm-12 p-0"
              routerLink="/projects/{{ project.title }}">
