@@ -1,8 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
-@import '~bootstrap/scss/bootstrap-reboot';
+/* IMPORTS */
+/*@import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
-@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap';*/
+@import '/assets/css/variables.scss';
 
+/* FONTS */
 @font-face {
   font-family: SourceSansPro;
   src: url(assets/fonts/SourceSansPro-Regular.ttf) format("opentype");
@@ -13,7 +15,16 @@
   src: url(assets/fonts/SourceSansPro-Light.ttf) format("opentype");
 }
 
-html { scroll-behavior: smooth; }
+/* STYLES */
+html {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+}
 
 /* width */
 ::-webkit-scrollbar {
@@ -39,4 +50,56 @@ button:focus,
 img:focus,
 div:focus {
     outline: 0;
+}
+
+/* Flex Utils */
+.d-flex {
+    display: flex;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-content-start {
+    justify-content: flex-start;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-end {
+    justify-content: end;
+}
+
+/* Grid Utils */
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Media Queries */
+@media (min-width: $small) {
+    .container {
+        width: 540px;
+    }
+}
+
+@media (min-width: $medium) {
+    .container {
+        width: 720px;
+    }
+}
+
+@media (min-width: $large) {
+    .container {
+        width: 960px;
+    }
+}
+
+@media (min-width: $extra-large) {
+    .container {
+        width: 1140px;
+    }
 }

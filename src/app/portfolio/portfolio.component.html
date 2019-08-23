@@ -1,21 +1,17 @@
 <div class="container">
-    <div class="row tags" [@portfolioTrigger]>
+    <div class="tags d-flex flex-wrap justify-content-center" [@portfolioTrigger]>
         <app-tag *ngFor="let tag of tags" [tag]="tag"></app-tag>
     </div>
 
-    <div class="row portfolio" [@fadeTrigger]>
+    <div class="d-flex flex-wrap justify-content-center" [@fadeTrigger]>
         <div *ngFor="let project of projects | tagFilter: getSelectedTags()" 
-             class="col-lg-4 col-md-6 col-sm-12 p-0"
-             routerLink="/projects/{{ project.title }}">
-            <div class="project-card">
-                <img [src]="project.thumbnail" class="img-fluid" alt=""/>
-                <div class="project-card-wrapper" >
-                    
-                    <div class="project-card-description">
-                        <p class="project-card-title">{{ project.title }}</p>
-                        <p>{{ project.description }}</p>
-                    </div>
-
+             routerLink="/projects/{{ project.title }}"
+             class="project-card">
+            <img [src]="project.thumbnail" class="img-fluid" alt=""/>
+            <div class="project-card__wrapper">
+                <div class="project-card__description">
+                    <p class="project-card__title">{{ project.title }}</p>
+                    <p>{{ project.description }}</p>
                 </div>
             </div>
         </div>

@@ -1,3 +1,48 @@
+/* IMPORTS */
+@import '../assets/css/variables.scss';
+
+
+/* VARIABLES */
+
+
+/* STYLES */
+.navbar {
+    height: $navbar-height;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    font-weight: 500;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+
+        li {
+            height: $navbar-height;
+            line-height: $navbar-height;
+            vertical-align: middle;
+            margin-right: 4rem;
+
+            a {
+                text-decoration: none;
+                color: $font-color-primary;
+            }
+        }
+
+        li:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__toggler {
+        display: none;
+    }
+
+}
+
+/*
 .nav-master {
     padding: 0;
     text-align: center;
@@ -9,7 +54,7 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 450;
     font-size: 1.1rem;
-    /*color: #3B3B3B !important;*/
+    /*color: #3B3B3B !important;
 }
 
 .nav-item a {
@@ -37,6 +82,7 @@ a.active {
 .navbar-toggler {
     border: none;
     margin: auto;
+    display: none;
 }
 
 .navbar-toggler-icon {
@@ -67,4 +113,4 @@ a.active {
     .fixed-top {
         position: relative;
     }
-}
+}*/
