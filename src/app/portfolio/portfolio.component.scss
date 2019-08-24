@@ -13,65 +13,14 @@ $card-margin: 2px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    color: $font-color-primary;
 }
 
 .project-card {
-    height: $card-height;
     width: 32%;
     min-width: 300px;
     margin: $card-margin;
-    overflow: hidden;
-    color: #FFF;
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.5;
-    position: relative;
-
-    img {
-        width: 100%;
-        height: auto;
-        transform: scale(1.01);
-        filter: brightness(50%) blur(0px);
-        object-fit: cover;
-        object-position: center;
-
-        min-height: $card-height;
-        transition: all .3s ease 0s;
-    }
-
-    &__wrapper {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        background-color: rgba(0, 0, 0, 0.6);
-        transition: all .5s ease-in-out 0s;
-    }
-
-    &__title {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: 20px;
-        margin: 0 0 1rem;
-    }
-
-    &__description {
-        padding: 2rem;
-        font-size: 15px;
-        opacity: 0;
-    }
-
-    &:hover {
-        img {
-            transform: scale(1.07);
-            filter: brightness(100%) blur(2px);
-        }
-
-        .project-card__description {
-            opacity: 1;
-        }
-    }
 }
-
 
 /* MEDIA QUERIES */
 @media (max-width: $medium) {

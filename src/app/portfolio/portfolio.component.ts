@@ -16,7 +16,7 @@ import { trigger, style, transition, animate, query, stagger, animateChild } fro
         query(':enter', [
           style({ marginTop: '-15px', opacity: 0 }),
           stagger(200, [animate('350ms ease-in-out'), animateChild()])
-        ])
+        ], { optional: true })
       ]),
     ]),
     trigger('fadeTrigger', [

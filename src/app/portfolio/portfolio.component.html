@@ -3,17 +3,7 @@
         <app-tag *ngFor="let tag of tags" [tag]="tag"></app-tag>
     </div>
 
-    <div class="d-flex flex-wrap justify-content-center" [@fadeTrigger]>
-        <div *ngFor="let project of projects | tagFilter: getSelectedTags()" 
-             routerLink="/projects/{{ project.title }}"
-             class="project-card">
-            <img [src]="project.thumbnail" class="img-fluid" alt=""/>
-            <div class="project-card__wrapper">
-                <div class="project-card__description">
-                    <p class="project-card__title">{{ project.title }}</p>
-                    <p>{{ project.description }}</p>
-                </div>
-            </div>
-        </div>
+    <div class="d-flex flex-wrap justify-content-center" [@portfolioTrigger]>
+        <div project-card class="project-card" *ngFor="let project of projects | tagFilter: getSelectedTags()" [project]="project"  ></div>
     </div>
 </div>
