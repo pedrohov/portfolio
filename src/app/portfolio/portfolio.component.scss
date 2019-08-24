@@ -1,18 +1,25 @@
+/* IMPORTS */
+@import '../../assets/css/variables.scss';
+
+
 /* VARIABLES */
 $card-height: 350px;
-$card-margin: 5px;
+$card-margin: 2px;
+
 
 /* STYLES */
 .tags {
-    /* Actual margin-top + nav height */
-    margin: calc(93px + 50px) 0 20px;
+    margin: 2rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .project-card {
     height: $card-height;
     width: 32%;
     min-width: 300px;
-    margin: 0 $card-margin $card-margin 0;
+    margin: $card-margin;
     overflow: hidden;
     color: #FFF;
     font-family: 'Montserrat', sans-serif;
@@ -67,14 +74,9 @@ $card-margin: 5px;
 
 
 /* MEDIA QUERIES */
-@media (max-width: 576px) {
+@media (max-width: $medium) {
     .project-card {
         width: 100%;
-        margin: 0;
-    }
-
-    .tags {
-        margin-top: 20px;
-        justify-content: center;
+        margin: $card-margin 0;
     }
 }
