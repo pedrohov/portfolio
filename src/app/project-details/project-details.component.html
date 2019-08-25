@@ -1,11 +1,9 @@
-<div class="row full-view" *ngIf="project" [@fadeInRight] >
-    <div class="col-lg-7 p-0 header">
-        <img [src]="selected" class="img-fluid" alt="" [class.fitImg]="changed" id="img-header"/>
-    </div> 
-    <div class="col-lg-5 p-0" >
-        <div class="project-wrapper">
+<div class="view" *ngIf="project" [@fadeInRight] >
+        <img [src]="selected" alt="" [class.img-display--fit-img]="changed" class="img-display" id="img-header"/>
+    <div class="content">
+        <div class="content__wrapper">
             <h2> {{ project.title }} </h2>                                  
-            <p class="project-description">
+            <p class="content__description">
                 {{ project.content }}
             </p>
             <a *ngIf="project.website.length > 0" href="{{ project.website }}" target="_blank">Ver mais sobre este projeto</a>
@@ -16,7 +14,7 @@
                 </li>
             </ul>
             <h4 *ngIf="project.pictures.length">Galeria:</h4>
-            <div class="project-picture">
+            <div class="content__picture">
                 <img *ngFor="let pic of project.pictures" [src]="pic" class="img-fluid" alt="" (click)="changeImage(pic)"/>
             </div>
         </div>

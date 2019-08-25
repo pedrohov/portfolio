@@ -1,80 +1,96 @@
-.full-view {
+/* IMPORTS */
+@import '../../assets/css/variables.scss';
+
+/* STYLES */
+.view {
     height: 100%;
-    margin: 0 !important;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.header {
-    position: fixed;
-    right: 0;
-}
-
-h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: bold;
-    margin-bottom: 2rem;
-}
-
-h4 {
-    margin-top: 1rem;
-    font-size: 20px;
-}
-
-.header img {
+.img-display {
+    max-width: 60%;
     height: 100vh;
     object-fit: cover;
     object-position: middle;
-}
+    position: absolute;
+    right: 0;
+    z-index: -1;
 
-.fitImg {
-    width: 100%;
-    height: auto !important;
-    object-fit: fit !important;
-}
-
-.small-img {
-    width: 100%;
-    height: auto;
-}
-
-.project-wrapper {
-    padding: 2.5rem 2rem;
-    color: #4F4F4F;
-}
-
-.project-description {
-    text-align: justify;
-}
-
-.project-picture {
-   /* width: 100%;
-    margin: 0 auto;
-    text-align: center;*/
-}
-
-.project-picture img {
-    max-width: 150px;
-    max-height: 150px;
-    margin: 0 2px 2px 0;
-    display: inline-block;
-    cursor: pointer;
-}
-
-@media (max-width: 576px) {
-    .header img {
+    &--fit-img {
         width: 100%;
+        height: auto !important;
+        object-fit: fit !important;
+    }
+}
+
+.content {
+    width: 40%;
+    color: $font-color-primary;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    &__wrapper {
+        padding: 2.5rem 2rem;
+        color: #4F4F4F;
+    }
+
+    &__description {
+        text-align: justify;
+        font-size: 1.05em;
+        line-height: 1.5;
+    }
+
+    &__picture img {
+        max-width: 150px;
+        max-height: 150px;
+        margin: 0 2px 2px 0;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    a {
+        color: $link-color;
+        text-decoration: none;
+        background-color: transparent;
+    }
+
+    h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 2em;
+        margin: 0 0 2rem;
+    }
+
+    h4 {
+        margin: 1rem 0;
+        font-size: 20px;
+    }
+
+    ul {
+        li {
+            margin: 0.5rem 0;
+        }
+    }
+
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 576px) {
+    .img-display {
         max-height: 250px;
-        object-position: top;
     }
 }
 
 @media (max-width: 992px) {
-    .header img {
-        width: 100%;
+    .img-display {
+        max-width: 100%;
         max-height: 400px;
         object-position: top;
+        position: relative;
+        margin: 0 auto;
     }
 
-    .header {
-        position: relative;
+    .content {
+        width: 100%;
     }
 }
