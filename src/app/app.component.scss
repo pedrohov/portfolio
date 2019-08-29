@@ -23,8 +23,14 @@
             margin-right: 4rem;
 
             a {
+                font-size: .8em;
                 text-decoration: none;
+                text-transform: uppercase;
                 color: $font-color-primary;
+            }
+
+            a.active {
+                font-weight: 600;
             }
         }
 

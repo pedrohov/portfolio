@@ -9,10 +9,10 @@
         <div class="navbar-collapse" [@toggleMenu]="toggleState ? 'open' : 'closed'">
             <ul>
                 <li>
-                    <a routerLink="home" class="nav-link" [routerLinkActive]="['active']">Início</a>
+                    <a routerLink="home" [routerLinkActive]="['active']">Início</a>
                 </li>
                 <li>
-                    <a routerLink="projects" class="nav-link" [routerLinkActive]="['active']">Projetos</a>
+                    <a routerLink="projects" [routerLinkActive]="['active']">Projetos</a>
                 </li>
             </ul>
         </div>
