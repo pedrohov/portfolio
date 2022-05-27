@@ -1,92 +1,85 @@
-/* IMPORTS */
-@import '../../assets/css/variables.scss';
-
-
-/* STYLES */
 .home {
-    width: 100%;
-    height: calc(100vh - #{$navbar-height});
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
-    font-family: 'Source Sans Pro', sans-serif;
-    color: #FFF;
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
+  font-family: "Source Sans Pro", sans-serif;
+  color: #fff;
 
-    ul {
-        text-align: center;
-        list-style: none;
-        padding: 0;
+  ul {
+    text-align: center;
+    list-style: none;
+    padding: 0;
+  }
+
+  &__header {
+    margin-top: -5rem;
+    text-align: center;
+
+    .title {
+      font-size: 3em;
+      margin: 0 0 1rem;
     }
 
-    &__header {
-        margin-top: -5rem;
-        text-align: center;
+    .subtitle {
+      font-family: SourceSansProLight;
+      font-size: 1.2em;
+      color: #7f7f7f;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 0;
+      padding-top: 0.5rem;
+      max-width: 400px;
+    }
+  }
 
-        .title {
-            font-size: 3em;
-            margin: 0 0 1rem;
-        }
+  &__call-to-action {
+    margin: 2rem 0;
 
-        .subtitle {
-            font-family: SourceSansProLight;
-            font-size: 1.2em;
-            color: #7f7f7f;
-            color: rgba(255, 255, 255, .8);
-            margin: 0;
-            padding-top: .5rem;
-            max-width: 400px;
-        }
+    li {
+      display: inline-block;
+      padding: 0.6em 2rem;
+      margin: 0.4rem 1rem;
+      text-transform: uppercase;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      cursor: pointer;
+
+      transition: background 0.3s ease 0s, border-color 0.3s ease 0s;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
     }
 
-    &__call-to-action {
-        margin: 2rem 0;
-
-        li {
-            display: inline-block;
-            padding: .6em 2rem;
-            margin: 0.4rem 1rem;
-            text-transform: uppercase;
-            border: 1px solid #fff;
-            border-radius: 4px;
-            cursor: pointer;
-
-            transition: background .3s ease 0s, border-color .3s ease 0s, ;
-
-            a {
-                text-decoration: none;
-                color: inherit;
-            }
-        }
-
-        li:focus {
-            outline: none;
-        }
-
-        li:hover {
-            background: rgba(255, 255, 255, .3);
-            border-color: rgba(255, 255, 255, 0);
-        }
-
+    li:focus {
+      outline: none;
     }
 
-    &__social-media {
-        margin: 1.5rem 0 0;
+    li:hover {
+      background: rgba(255, 255, 255, 0.3);
+      border-color: rgba(255, 255, 255, 0);
+    }
+  }
 
-        li {
-            display: inline-block;
-            font-size: 1.2em;
-            margin-right: 2rem;
-        }
+  &__social-media {
+    margin: 1.5rem 0 0;
 
-        li:last-child {
-            margin-right: 0;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    li {
+      display: inline-block;
+      font-size: 1.2em;
+      margin-right: 2rem;
     }
 
+    li:last-child {
+      margin-right: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
 }

@@ -1,31 +1,24 @@
-/* IMPORTS */
-@import '../../assets/css/variables.scss';
-
-
-/* VARIABLES */
 $card-height: 350px;
 $card-margin: 2px;
 
-
-/* STYLES */
 .tags {
-    margin: 2rem 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: $font-color-primary;
+  margin: 2rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: var(--font-color-primary);
 }
 
 .project-card {
-    width: 32%;
-    min-width: 300px;
-    margin: $card-margin;
+  width: 32%;
+  min-width: 300px;
+  margin: $card-margin;
 }
 
 /* MEDIA QUERIES */
-@media (max-width: $medium) {
-    .project-card {
-        width: 100%;
-        margin: $card-margin 0;
-    }
+@media (max-width: var(--medium)) {
+  .project-card {
+    width: 100%;
+    margin: $card-margin 0;
+  }
 }

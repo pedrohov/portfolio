@@ -1,83 +1,77 @@
-/* IMPORTS */
-@import '../assets/css/variables.scss';
-
-
-/* STYLES */
 .navbar {
-    height: $navbar-height;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
-    font-weight: 500;
+  height: var(--navbar-height);
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2em;
+  font-weight: 500;
 
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 
-        li {
-            height: $navbar-height;
-            line-height: $navbar-height;
-            vertical-align: middle;
-            margin-right: 4rem;
+    li {
+      height: var(--navbar-height);
+      line-height: var(--navbar-height);
+      vertical-align: middle;
+      margin-right: 4rem;
 
-            a {
-                font-size: .8em;
-                text-decoration: none;
-                text-transform: uppercase;
-                color: $font-color-primary;
-            }
+      a {
+        font-size: 0.8em;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: var(--font-color-primary);
+      }
 
-            a.active {
-                font-weight: 600;
-            }
-        }
-
-        li:last-child {
-            margin-right: 0;
-        }
+      a.active {
+        font-weight: 600;
+      }
     }
 
-    &__toggler {
-        display: none;
-        margin: 0 auto;
-        border: none;
-        background: none;
-        cursor: pointer;
-
-        path {
-            fill: $font-color-primary;
-        }
+    li:last-child {
+      margin-right: 0;
     }
+  }
 
+  &__toggler {
+    display: none;
+    margin: 0 auto;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    path {
+      fill: var(--font-color-primary);
+    }
+  }
 }
 
 .box-shadow {
-    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
 }
 
-@media(max-width: $small) {
-    .navbar {
-        height: auto;
+@media (max-width: var(--small)) {
+  .navbar {
+    height: auto;
 
-        &__toggler {
-            display: block;
-            height: $navbar-height;
-        }
-
-        ul {
-            flex-direction: column;
-            align-items: center;
-
-            li {
-                margin: 0;
-            }
-        }
-
-        .navbar-collapse {
-            max-height: 0;
-            overflow: hidden;
-        }
+    &__toggler {
+      display: block;
+      height: var(--navbar-height);
     }
+
+    ul {
+      flex-direction: column;
+      align-items: center;
+
+      li {
+        margin: 0;
+      }
+    }
+
+    .navbar-collapse {
+      max-height: 0;
+      overflow: hidden;
+    }
+  }
 }
