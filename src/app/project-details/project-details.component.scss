@@ -6,7 +6,8 @@
 
 .img-display {
   max-width: 60%;
-  height: 100vh;
+  height: 100%;
+  height: calc(100vh - var(--navbar-height));
   object-fit: cover;
   object-position: middle;
   position: absolute;
