@@ -71,10 +71,10 @@
       display: inline-block;
       font-size: 1.2em;
       margin-right: 2rem;
-    }
 
-    li:last-child {
-      margin-right: 0;
+      &:last-child {
+        margin-right: 0;
+      }
     }
 
     a {

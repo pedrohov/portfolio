@@ -1,9 +1,14 @@
 <div class="container">
-    <div class="tags" [@portfolioTrigger]>
-        <app-tag *ngFor="let tag of tags" [tag]="tag"></app-tag>
-    </div>
+  <div class="tags">
+    <app-tag *ngFor="let tag of tags" [tag]="tag"></app-tag>
+  </div>
 
-    <div class="d-flex flex-wrap justify-content-center" [@portfolioTrigger]>
-        <div project-card class="project-card" *ngFor="let project of projects | tagFilter: getSelectedTags()" [project]="project"  ></div>
-    </div>
+  <div class="d-flex flex-wrap justify-content-center" [@portfolioTrigger]>
+    <div
+      project-card
+      class="project-card"
+      *ngFor="let project of projects | tagFilter: getSelectedTags()"
+      [project]="project"
+    ></div>
+  </div>
 </div>

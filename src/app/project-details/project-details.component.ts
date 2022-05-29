@@ -32,9 +32,6 @@ export class ProjectDetailsComponent implements OnInit {
   }
 
   getSource(): string {
-    console.log(
-      this.project.thumbnail.substr(0, this.project.thumbnail.indexOf("-"))
-    );
     return (
       this.project.thumbnail.substr(0, this.project.thumbnail.indexOf("-")) +
       ".jpg"
@@ -44,6 +41,5 @@ export class ProjectDetailsComponent implements OnInit {
   changeImage(pic): void {
     this.selected = pic;
     this.changed = true;
-    console.log(this.selected);
   }
 }
