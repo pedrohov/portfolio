@@ -1,22 +1,39 @@
-<div class="view" *ngIf="project" [@fadeInRight] >
-        <img [src]="selected" alt="" [class.img-display--fit-img]="changed" class="img-display" id="img-header"/>
-    <div class="content">
-        <div class="content__wrapper">
-            <h2> {{ project.title }} </h2>                                  
-            <p class="content__description">
-                {{ project.content }}
-            </p>
-            <a *ngIf="project.website.length > 0" href="{{ project.website }}" target="_blank">Ver mais sobre este projeto</a>
-            <h4>Tecnologias e Conceitos utilizados:</h4>
-            <ul>
-                <li *ngFor="let concept of project.tech_concepts">
-                    {{ concept }}
-                </li>
-            </ul>
-            <h4 *ngIf="project.pictures.length">Galeria:</h4>
-            <div class="content__picture">
-                <img *ngFor="let pic of project.pictures" [src]="pic" class="img-fluid" alt="" (click)="changeImage(pic)"/>
-            </div>
-        </div>
+<div class="view" *ngIf="project" [@fadeInRight]>
+  <div class="content">
+    <div class="content__wrapper">
+      <h2>{{ project.title }}</h2>
+      <p class="content__description">
+        {{ project.content }}
+      </p>
+      <a
+        *ngIf="project.website.length > 0"
+        href="{{ project.website }}"
+        target="_blank"
+        >Ver mais sobre este projeto</a
+      >
+      <h4>Tecnologias e Conceitos utilizados:</h4>
+      <ul>
+        <li *ngFor="let concept of project.tech_concepts">
+          {{ concept }}
+        </li>
+      </ul>
+      <h4 *ngIf="project.pictures.length">Galeria:</h4>
+      <div class="content__picture">
+        <img
+          *ngFor="let pic of project.pictures"
+          [src]="pic"
+          class="img-fluid"
+          alt=""
+          (click)="changeImage(pic)"
+        />
+      </div>
     </div>
+  </div>
+  <img
+    [src]="selected"
+    [alt]="project.title"
+    [class.img-display--fit-img]="changed"
+    class="img-display"
+    id="img-header"
+  />
 </div>

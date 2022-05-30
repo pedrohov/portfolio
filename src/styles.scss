@@ -22,10 +22,6 @@ body {
   --navbar-height: 90px;
   --font-color-primary: rgba(0, 0, 0, 0.54);
   --link-color: #007bff;
-  --extra-large: 1200px;
-  --large: 992px;
-  --medium: 768px;
-  --small: 576px;
 }
 
 /* width */
@@ -82,25 +78,25 @@ div:focus {
 }
 
 /* Media Queries */
-@media (min-width: var(--small)) {
+@media (min-width: 576px) {
   .container {
     width: 540px;
   }
 }
 
-@media (min-width: var(--medium)) {
+@media (min-width: 768px) {
   .container {
     width: 720px;
   }
 }
 
-@media (min-width: var(--large)) {
+@media (min-width: 992px) {
   .container {
     width: 960px;
   }
 }
 
-@media (min-width: var(--extra-large)) {
+@media (min-width: 1200px) {
   .container {
     width: 1140px;
   }
