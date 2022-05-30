@@ -7,7 +7,6 @@ import { AboutComponent } from "./about/about.component";
 import { ProjectDetailsComponent } from "./project-details/project-details.component";
 
 const routes: Routes = [
-  { path: "home", component: HomeComponent, data: { animation: "Home" } },
   {
     path: "projects",
     component: PortfolioComponent,
@@ -19,7 +18,7 @@ const routes: Routes = [
     component: ProjectDetailsComponent,
     data: { animation: "Portfolio" },
   },
-  { path: "", redirectTo: "/home", pathMatch: "full" },
+  { path: "", component: HomeComponent, pathMatch: "full" },
   { path: "*", redirectTo: "/home", pathMatch: "full" },
 ];
 

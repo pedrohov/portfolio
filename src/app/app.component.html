@@ -27,12 +27,15 @@
       >
         <ul>
           <li>
-            <a routerLink="home" [routerLinkActive]="['active']">Início</a>
+            <a
+              routerLink="/"
+              routerLinkActive="active"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Início</a
+            >
           </li>
           <li>
-            <a routerLink="projects" [routerLinkActive]="['active']"
-              >Projetos</a
-            >
+            <a routerLink="projects" routerLinkActive="active">Projetos</a>
           </li>
         </ul>
       </div>
