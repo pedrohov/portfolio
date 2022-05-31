@@ -1,8 +1,8 @@
 import { Component, OnInit } from "@angular/core";
-import { Project } from "../model/project";
-import { Tag } from "../model/tag";
-import { ProjectService } from "../services/project.service";
-import { TagService } from "../services/tag.service";
+import { Project } from "@core/models/project";
+import { Tag } from "@core/models/tag";
+import { ProjectService } from "@core/project.service";
+import { TagService } from "@core/tag.service";
 
 import {
   trigger,

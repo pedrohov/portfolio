@@ -9,15 +9,9 @@
         *ngIf="project.website.length > 0"
         href="{{ project.website }}"
         target="_blank"
-        >Ver mais sobre este projeto</a
+        >View project</a
       >
-      <h4>Tecnologias e Conceitos utilizados:</h4>
-      <ul>
-        <li *ngFor="let concept of project.tech_concepts">
-          {{ concept }}
-        </li>
-      </ul>
-      <h4 *ngIf="project.pictures.length">Galeria:</h4>
+      <h4 *ngIf="project.pictures.length">Gallery</h4>
       <div class="content__picture">
         <img
           *ngFor="let pic of project.pictures"
