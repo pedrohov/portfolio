@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Project } from "@core/models/project";
 import { ProjectService } from "@core/project.service";
 
@@ -14,27 +14,26 @@ export class ProjectDetailsComponent implements OnInit {
   changed: boolean;
 
   constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private projectService: ProjectService
   ) {}
 
   ngOnInit() {
     this.getProject();
-    this.selected = this.getSource();
-    this.changed = false;
   }
 
   getProject(): void {
-    let title = this.route.snapshot.paramMap.get("title");
-    this.projectService
-      .getProject(title)
-      .subscribe((project) => (this.project = project));
-  }
-
-  getSource(): string {
-    return (
-      this.project.thumbnail.substr(0, this.project.thumbnail.indexOf("-")) +
-      ".jpg"
+    const title = this.route.snapshot.paramMap.get("title");
+    this.projectService.getProject(title).subscribe(
+      (project: Project) => {
+        this.project = project;
+        this.selected = this.project.thumbnail;
+        this.changed = false;
+      },
+      () => {
+        this.router.navigate(["/"]);
+      }
     );
   }
 

@@ -7,7 +7,7 @@
     <div
       project-card
       class="project-card"
-      *ngFor="let project of projects | tagFilter: getSelectedTags()"
+      *ngFor="let project of projects$ | async | tagFilter: getSelectedTags()"
       [project]="project"
     ></div>
   </div>

@@ -13,6 +13,7 @@ import {
   stagger,
   animateChild,
 } from "@angular/animations";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-portfolio",
@@ -41,7 +42,7 @@ import {
   ],
 })
 export class PortfolioComponent implements OnInit {
-  projects: Project[];
+  projects$: Observable<Project[]>;
   tags: Tag[];
 
   constructor(
@@ -55,9 +56,7 @@ export class PortfolioComponent implements OnInit {
   }
 
   getProjects(): void {
-    this.projectService
-      .getProjects()
-      .subscribe((projects) => (this.projects = projects));
+    this.projects$ = this.projectService.getProjects();
   }
 
   getTags(): void {

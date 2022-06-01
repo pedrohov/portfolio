@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Observable, of } from "rxjs";
+import { Observable, of, throwError } from "rxjs";
 import { PROJECTS } from "./data/projects";
 import { Project } from "./models/project";
 
@@ -13,7 +13,9 @@ export class ProjectService {
     return of(PROJECTS);
   }
 
-  getProject(title: string): Observable<Project> {
-    return of(PROJECTS.find((project) => project.title === title));
+  getProject(title: string): Observable<Project | undefined> {
+    const project = PROJECTS.find((project) => project.title === title);
+    if (!project) return throwError(`Project ${title} not found`);
+    return of(project);
   }
 }
