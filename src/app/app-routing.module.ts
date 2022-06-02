@@ -19,7 +19,7 @@ const routes: Routes = [
     data: { animation: "Portfolio" },
   },
   { path: "", component: HomeComponent, pathMatch: "full" },
-  { path: "*", redirectTo: "/home", pathMatch: "full" },
+  { path: "**", redirectTo: "/", pathMatch: "full" },
 ];
 
 @NgModule({

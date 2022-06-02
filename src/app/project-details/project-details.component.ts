@@ -19,7 +19,7 @@ export class ProjectDetailsComponent implements OnInit {
     private projectService: ProjectService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getProject();
   }
 
@@ -37,7 +37,7 @@ export class ProjectDetailsComponent implements OnInit {
     );
   }
 
-  changeImage(pic): void {
+  changeImage(pic: String): void {
     this.selected = pic;
     this.changed = true;
   }
