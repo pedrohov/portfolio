@@ -1,12 +1,19 @@
+h1 {
+  font-size: 3em;
+  margin: 0 0 1rem;
+  font-weight: 500;
+}
+
 .home {
   width: 100%;
   height: calc(100vh - var(--navbar-height));
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
-  font-family: "Source Sans Pro", sans-serif;
   color: #fff;
+  background: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
+  background-size: 160% 160%;
+  animation: gradient 12s ease infinite;
 
   ul {
     text-align: center;
@@ -18,13 +25,7 @@
     margin-top: -5rem;
     text-align: center;
 
-    .title {
-      font-size: 3em;
-      margin: 0 0 1rem;
-    }
-
     .subtitle {
-      font-family: SourceSansProLight;
       font-size: 1.2em;
       color: #7f7f7f;
       color: rgba(255, 255, 255, 0.8);
@@ -39,7 +40,6 @@
 
     li {
       display: inline-block;
-      padding: 0.6em 2rem;
       margin: 0.4rem 1rem;
       text-transform: uppercase;
       border: 1px solid #fff;
@@ -51,6 +51,8 @@
       a {
         text-decoration: none;
         color: inherit;
+        padding: 0.6em 2rem;
+        display: block;
       }
     }
 
@@ -81,5 +83,17 @@
       text-decoration: none;
       color: inherit;
     }
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }

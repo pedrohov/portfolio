@@ -1,25 +1,37 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { TagComponent } from "./tag.component";
 
-import { TagComponent } from './tag.component';
-
-describe('TagComponent', () => {
+describe("TagComponent", () => {
   let component: TagComponent;
   let fixture: ComponentFixture<TagComponent>;
-
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [ TagComponent ]
-    })
-    .compileComponents();
-  }));
+  let element: HTMLElement;
 
   beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [TagComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(TagComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    element = fixture.elementRef.nativeElement;
+    component.tag = {
+      name: "Angular",
+      color: "red",
+      selected: true,
+    };
   });
 
-  it('should create', () => {
+  it("should create the Tag", () => {
     expect(component).toBeTruthy();
+  });
+
+  it("should have as name 'Angular'", () => {
+    fixture.detectChanges();
+    expect(element.textContent).toContain("Angular");
+  });
+
+  it("should be selected", () => {
+    fixture.detectChanges();
+    expect(component.tag.selected).toBe(true);
   });
 });
