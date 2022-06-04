@@ -1,0 +1,47 @@
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { TAGS } from "@core/data/tags";
+import { TagService } from "@core/tag.service";
+import { TagFilterPipe } from "../pipes/tag-filter.pipe";
+import { PortfolioComponent } from "./portfolio.component";
+
+describe("PortfolioComponent", () => {
+  let tagService: TagService;
+  let component: PortfolioComponent;
+  let fixture: ComponentFixture<PortfolioComponent>;
+  let element: HTMLElement;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [BrowserAnimationsModule],
+      declarations: [PortfolioComponent, TagFilterPipe],
+      providers: [TagService],
+    }).compileComponents();
+
+    fixture = TestBed.createComponent(PortfolioComponent);
+    component = fixture.componentInstance;
+    element = fixture.elementRef.nativeElement;
+    tagService = TestBed.inject(TagService);
+  });
+
+  it("should create the Portfolio", () => {
+    expect(component).toBeTruthy();
+  });
+
+  it("should create the TagService", () => {
+    expect(tagService).toBeTruthy();
+  });
+
+  it("should fetch all service Tags", () => {
+    let tags = [];
+    tagService.getTags().subscribe((t) => (tags = t));
+    expect(tags).toEqual(TAGS);
+  });
+
+  it("should have tags", () => {
+    let tags = [];
+    tagService.getTags().subscribe((t) => (tags = t));
+    fixture.detectChanges();
+    expect(component.tags).toEqual(tags);
+  });
+});

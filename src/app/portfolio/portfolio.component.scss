@@ -1,4 +1,3 @@
-$card-height: 350px;
 $card-margin: 2px;
 
 .tags {
@@ -15,14 +14,12 @@ $card-margin: 2px;
   margin: $card-margin;
 }
 
-/* MEDIA QUERIES */
 @media (max-width: 992px) {
   .project-card {
     width: calc(50% - #{$card-margin} * 2);
   }
 }
 
-/* MEDIA QUERIES */
 @media (max-width: 768px) {
   .project-card {
     width: 100%;

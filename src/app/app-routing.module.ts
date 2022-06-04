@@ -5,7 +5,7 @@ import { HomeComponent } from "./home/home.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ProjectDetailsComponent } from "./project-details/project-details.component";
 
-const routes: Routes = [
+export const ROUTES: Routes = [
   {
     path: "projects",
     component: PortfolioComponent,
@@ -22,7 +22,7 @@ const routes: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(routes, { scrollPositionRestoration: "enabled" }),
+    RouterModule.forRoot(ROUTES, { scrollPositionRestoration: "enabled" }),
   ],
   exports: [RouterModule],
 })
