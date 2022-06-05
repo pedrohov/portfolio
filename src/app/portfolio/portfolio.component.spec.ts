@@ -1,8 +1,12 @@
+import { CommonModule } from "@angular/common";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { RouterTestingModule } from "@angular/router/testing";
 import { TAGS } from "@core/data/tags";
 import { TagService } from "@core/tag.service";
+import { TagComponent } from "@shared/tag/tag.component";
 import { TagFilterPipe } from "../pipes/tag-filter.pipe";
+import { ProjectCardComponent } from "../project-card/project-card.component";
 import { PortfolioComponent } from "./portfolio.component";
 
 describe("PortfolioComponent", () => {
@@ -13,8 +17,13 @@ describe("PortfolioComponent", () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [BrowserAnimationsModule],
-      declarations: [PortfolioComponent, TagFilterPipe],
+      imports: [CommonModule, BrowserAnimationsModule, RouterTestingModule],
+      declarations: [
+        PortfolioComponent,
+        TagComponent,
+        ProjectCardComponent,
+        TagFilterPipe,
+      ],
       providers: [TagService],
     }).compileComponents();
 
