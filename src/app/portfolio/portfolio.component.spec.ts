@@ -2,6 +2,7 @@ import { CommonModule } from "@angular/common";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterTestingModule } from "@angular/router/testing";
+import { PROJECTS } from "@core/data/projects";
 import { TAGS } from "@core/data/tags";
 import { TagService } from "@core/tag.service";
 import { TagComponent } from "@shared/tag/tag.component";
@@ -52,5 +53,21 @@ describe("PortfolioComponent", () => {
     tagService.getTags().subscribe((t) => (tags = t));
     fixture.detectChanges();
     expect(component.tags).toEqual(tags);
+  });
+
+  it("should get all selected tags", () => {
+    tagService.getTags().subscribe((t) => (component.tags = t));
+    component.tags[1].selected = false;
+    const selectedTags = component.getSelectedTags();
+    fixture.detectChanges();
+    expect(component.tags.length).toBeGreaterThan(selectedTags.length);
+  });
+
+  it("should fetch all projects", () => {
+    let projects = [];
+    component.getProjects();
+    component.projects$.subscribe((p) => (projects = p));
+    fixture.detectChanges();
+    expect(projects).toEqual(PROJECTS);
   });
 });

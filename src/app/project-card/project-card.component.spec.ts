@@ -1,13 +1,20 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
+import {
+  ComponentFixture,
+  fakeAsync,
+  TestBed,
+  tick,
+} from "@angular/core/testing";
 import { ProjectCardComponent } from "./project-card.component";
 import { PROJECTS } from "@core/data/projects";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ROUTES } from "src/app/app-routing.module";
+import { Router } from "@angular/router";
 
 describe("ProjectCardComponent", () => {
   let component: ProjectCardComponent;
   let fixture: ComponentFixture<ProjectCardComponent>;
   let element: HTMLElement;
+  let router: Router;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -19,6 +26,7 @@ describe("ProjectCardComponent", () => {
     component = fixture.componentInstance;
     element = fixture.elementRef.nativeElement;
     component.project = PROJECTS[0];
+    router = TestBed.inject(Router);
   });
 
   it("should create the Project Card", () => {
@@ -41,4 +49,14 @@ describe("ProjectCardComponent", () => {
       "A dashboard for visualizing reforestation and restauration numbers mapped by the Observatory in Brazil."
     );
   });
+
+  it("should navigate to a Project page", fakeAsync(() => {
+    const link = element.querySelector(".project-card") as HTMLElement;
+    fixture.detectChanges();
+    link.click();
+    tick();
+    expect(router.url).toBe(
+      `/projects/${component.project.title.replaceAll(" ", "%20")}`
+    );
+  }));
 });
