@@ -1,6 +1,6 @@
-import { Component } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
-
+import { Component, OnDestroy } from "@angular/core";
+import { NavigationEnd, Router, RouterOutlet } from "@angular/router";
+import { filter, map } from "rxjs/operators";
 import {
   trigger,
   style,
@@ -8,6 +8,8 @@ import {
   animate,
   state,
 } from "@angular/animations";
+import { GoogleAnalyticsService } from "@core/google-analytics.service";
+import { Subscription } from "rxjs";
 
 @Component({
   selector: "app-root",
@@ -21,18 +23,35 @@ import {
     ]),
   ],
 })
-export class AppComponent {
+export class AppComponent implements OnDestroy {
   toggleState: boolean = false;
+  routeSub: Subscription;
 
-  toggle() {
+  constructor(router: Router, googleAnalyticsService: GoogleAnalyticsService) {
+    googleAnalyticsService.setupGoogleAnalytics();
+    this.routeSub = router.events
+      .pipe(
+        filter((e) => e instanceof NavigationEnd),
+        map((e) => e as NavigationEnd)
+      )
+      .subscribe((event: NavigationEnd) => {
+        googleAnalyticsService.sendPageViewEvent(event.urlAfterRedirects);
+      });
+  }
+
+  toggle(): void {
     this.toggleState = !this.toggleState;
   }
 
-  prepareRoute(outlet: RouterOutlet) {
+  prepareRoute(outlet: RouterOutlet): void {
     return (
       outlet &&
       outlet.activatedRouteData &&
       outlet.activatedRouteData["animation"]
     );
+  }
+
+  ngOnDestroy() {
+    this.routeSub.unsubscribe();
   }
 }
