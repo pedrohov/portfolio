@@ -1,8 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Project } from "@core/models/project";
-import { Tag } from "@core/models/tag";
 import { ProjectService } from "@core/project.service";
-import { TagService } from "@core/tag.service";
 
 import {
   trigger,
@@ -43,27 +41,14 @@ import { Observable } from "rxjs";
 })
 export class PortfolioComponent implements OnInit {
   projects$: Observable<Project[]>;
-  tags: Tag[];
 
-  constructor(
-    private projectService: ProjectService,
-    private tagService: TagService
-  ) {}
+  constructor(private projectService: ProjectService) {}
 
   ngOnInit() {
     this.getProjects();
-    this.getTags();
   }
 
   getProjects(): void {
     this.projects$ = this.projectService.getProjects();
-  }
-
-  getTags(): void {
-    this.tagService.getTags().subscribe((tags) => (this.tags = tags));
-  }
-
-  getSelectedTags(): Tag[] {
-    return this.tags.filter((tag) => tag.selected === true);
   }
 }

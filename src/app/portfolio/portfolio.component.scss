@@ -1,28 +1,5 @@
-$card-margin: 2px;
-
-.tags {
-  margin: 2rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  color: var(--font-color-primary);
-}
-
 .project-card {
-  width: 32%;
-  min-width: 300px;
-  margin: $card-margin;
-}
-
-@media (max-width: 992px) {
-  .project-card {
-    width: calc(50% - #{$card-margin} * 2);
-  }
-}
-
-@media (max-width: 768px) {
-  .project-card {
-    width: 100%;
-    margin: $card-margin 0;
-  }
+  width: 100%;
+  // min-width: 300px;
+  // margin: $card-margin;
 }
