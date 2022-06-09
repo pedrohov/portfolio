@@ -1,12 +1,12 @@
 <div
   class="d-flex flex-wrap justify-content-center"
   [@portfolioTrigger]
-  style="padding: 150px; gap: 100px"
+  style="gap: 100px; padding: 150px 0"
 >
-  <div
+  <section
     project-card
     class="project-card"
     *ngFor="let project of projects$ | async"
     [project]="project"
-  ></div>
+  ></section>
 </div>

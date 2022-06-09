@@ -10,6 +10,7 @@ import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { TagFilterPipe } from "./pipes/tag-filter.pipe";
 import { HomeComponent } from "./home/home.component";
 import { SharedModule } from "./shared/shared.module";
+import { MapComponent } from "./map/map.component";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { SharedModule } from "./shared/shared.module";
     PortfolioComponent,
     TagFilterPipe,
     HomeComponent,
+    MapComponent,
   ],
   imports: [
     BrowserModule,

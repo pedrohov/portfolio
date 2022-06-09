@@ -15,7 +15,7 @@ import {
     trigger("fadeTrigger", [
       transition("* => *", [
         style({ opacity: 0 }),
-        animate("750ms ease-in-out"),
+        animate("1s ease-in-out"),
         animateChild(),
       ]),
     ]),

@@ -22,7 +22,11 @@ export const ROUTES: Routes = [
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(ROUTES, { scrollPositionRestoration: "enabled" }),
+    RouterModule.forRoot(ROUTES, {
+      anchorScrolling: "enabled",
+      onSameUrlNavigation: "reload",
+      relativeLinkResolution: "legacy",
+    }),
   ],
   exports: [RouterModule],
 })
