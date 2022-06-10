@@ -1,0 +1,36 @@
+h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0;
+  color: inherit;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #bebebe;
+}
+
+a {
+  text-decoration: none;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  display: block;
+  color: #fff;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@media (min-width: 576px) {
+  h4 {
+    font-size: 2.5rem;
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 36px;
+  }
+}

@@ -11,6 +11,7 @@ import { TagFilterPipe } from "./pipes/tag-filter.pipe";
 import { HomeComponent } from "./home/home.component";
 import { SharedModule } from "./shared/shared.module";
 import { MapComponent } from "./map/map.component";
+import { SideProjectComponent } from "./side-project/side-project.component";
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { MapComponent } from "./map/map.component";
     TagFilterPipe,
     HomeComponent,
     MapComponent,
+    SideProjectComponent,
   ],
   imports: [
     BrowserModule,

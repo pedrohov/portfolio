@@ -6,6 +6,9 @@ import {
   animate,
   animateChild,
 } from "@angular/animations";
+import { SideProjectService } from "@core/side-project.service";
+import { SideProject } from "@core/models/side-project";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-home",
@@ -22,5 +25,15 @@ import {
   ],
 })
 export class HomeComponent {
-  constructor() {}
+  sideProjects$: Observable<SideProject[]>;
+
+  constructor(private sideProjectService: SideProjectService) {}
+
+  ngOnInit() {
+    this.getProjects();
+  }
+
+  getProjects(): void {
+    this.sideProjects$ = this.sideProjectService.getSideProjects();
+  }
 }

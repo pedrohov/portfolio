@@ -1,23 +1,41 @@
-<map class="inner-map" enableEvents="true" fadeInDelay="500"></map>
+<map class="inner-map" enableEvents="true" fadeInDelay="200"></map>
 
-<div class="home">
-  <div class="home__header" [@fadeTrigger]>
-    <h1>Developing GIS apps and visualization tools for geospatial datasets</h1>
-    <h2>Hi! I’m Pedro, I build solutions for the web and other fun stuff.</h2>
+<div class="container">
+  <div class="home">
+    <div class="home__header" [@fadeTrigger]>
+      <h1>
+        Developing GIS apps and visualization tools for geospatial datasets
+      </h1>
+      <h2>Hi! I’m Pedro, I build solutions for the web and other fun stuff.</h2>
+    </div>
+
+    <a href="#projects" class="projects-arrow">
+      <svg
+        width="48"
+        height="48"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M24 40L8 24L10.1 21.9L22.5 34.3V8H25.5V34.3L37.9 21.9L40 24L24 40Z"
+          fill="currentColor"
+        /></svg
+    ></a>
   </div>
 
-  <a href="#projects" class="projects-arrow">
-    <svg
-      width="48"
-      height="48"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M24 40L8 24L10.1 21.9L22.5 34.3V8H25.5V34.3L37.9 21.9L40 24L24 40Z"
-        fill="currentColor"
-      /></svg
-  ></a>
+  <app-portfolio id="projects"></app-portfolio>
 </div>
 
-<app-portfolio id="projects"></app-portfolio>
+<section class="side-projects">
+  <div class="container">
+    <div class="side-projects__wrapper">
+      <h2>Side Projects</h2>
+      <div class="side-projects__list">
+        <app-side-project
+          *ngFor="let sideProject of sideProjects$ | async"
+          [sideProject]="sideProject"
+        ></app-side-project>
+      </div>
+    </div>
+  </div>
+</section>
