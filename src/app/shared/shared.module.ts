@@ -1,9 +1,8 @@
 import { NgModule } from "@angular/core";
-import { TagComponent } from "./tag/tag.component";
 
 @NgModule({
-  declarations: [TagComponent],
+  declarations: [],
   imports: [],
-  exports: [TagComponent],
+  exports: [],
 })
 export class SharedModule {}

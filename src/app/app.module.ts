@@ -7,7 +7,6 @@ import { AppComponent } from "./app.component";
 import { ProjectCardComponent } from "./project-card/project-card.component";
 import { ProjectDetailsComponent } from "./project-details/project-details.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
-import { TagFilterPipe } from "./pipes/tag-filter.pipe";
 import { HomeComponent } from "./home/home.component";
 import { SharedModule } from "./shared/shared.module";
 import { MapComponent } from "./map/map.component";
@@ -19,7 +18,6 @@ import { SideProjectComponent } from "./side-project/side-project.component";
     ProjectCardComponent,
     ProjectDetailsComponent,
     PortfolioComponent,
-    TagFilterPipe,
     HomeComponent,
     MapComponent,
     SideProjectComponent,
