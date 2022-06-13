@@ -9,6 +9,9 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ROUTES } from "../app-routing.module";
+import { PortfolioComponent } from "../portfolio/portfolio.component";
+import { ProjectCardComponent } from "../project-card/project-card.component";
+import { SideProjectComponent } from "../side-project/side-project.component";
 import { HomeComponent } from "./home.component";
 
 describe("HomeComponent", () => {
@@ -24,7 +27,12 @@ describe("HomeComponent", () => {
         BrowserAnimationsModule,
         RouterTestingModule.withRoutes(ROUTES),
       ],
-      declarations: [HomeComponent],
+      declarations: [
+        HomeComponent,
+        PortfolioComponent,
+        SideProjectComponent,
+        ProjectCardComponent,
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(HomeComponent);
@@ -37,34 +45,21 @@ describe("HomeComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should navigate to Projects", fakeAsync(() => {
-    const link = element.querySelector(
-      ".home__call-to-action a"
-    ) as HTMLElement;
-    link.click();
-    tick();
-    expect(router.url).toBe("/projects");
-  }));
-
   it("should have a Header", () => {
     fixture.detectChanges();
     const header = element.querySelector("h1");
     expect(header).toBeTruthy();
-    expect(header.innerText).toContain("Oi, eu sou Pedro");
+    expect(header.innerText).toContain(
+      "Developing GIS apps and visualization tools for geospatial datasets"
+    );
   });
 
   it("should have a Subtitle", () => {
     fixture.detectChanges();
-    const subtitle = element.querySelector(".subtitle") as HTMLElement;
+    const subtitle = element.querySelector("h2") as HTMLElement;
     expect(subtitle).toBeTruthy();
     expect(subtitle.innerText).toContain(
-      "Cientista da Computação com experiência em Engenharia de Software e Desenvolvimento Web."
+      "Hi! I’m Pedro, I build solutions for the web and other fun stuff."
     );
-  });
-
-  it("should have a button to view Projects", () => {
-    fixture.detectChanges();
-    const portfolioBtn = element.querySelector(".home__call-to-action a");
-    expect(portfolioBtn).toBeTruthy();
   });
 });

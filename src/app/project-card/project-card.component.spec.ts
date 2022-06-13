@@ -35,23 +35,20 @@ describe("ProjectCardComponent", () => {
 
   it("should have as title 'Restoration and Reforestation Observatory Dashboard'", () => {
     fixture.detectChanges();
-    expect(element.querySelector(".project-card__title").textContent).toContain(
+    expect(element.querySelector("h4").textContent).toContain(
       "Restoration and Reforestation Observatory Dashboard"
     );
   });
 
   it("should have a description", () => {
     fixture.detectChanges();
-    expect(
-      element.querySelector(".project-card__description p:last-child")
-        .textContent
-    ).toContain(
+    expect(element.querySelector("p").textContent).toContain(
       "A dashboard for visualizing reforestation and restauration numbers mapped by the Observatory in Brazil."
     );
   });
 
   it("should navigate to a Project page", fakeAsync(() => {
-    const link = element.querySelector(".project-card") as HTMLElement;
+    const link = element.querySelector("a") as HTMLElement;
     fixture.detectChanges();
     link.click();
     tick();
