@@ -5,7 +5,6 @@ export const PROJECTS: Project[] = [
     title: "Restoration and Reforestation Observatory Dashboard",
     description:
       "A dashboard for visualizing reforestation and restauration numbers mapped by the Observatory in Brazil.",
-    tags: ["D3", "Angular"],
     thumbnail: "./assets/images/obs-thumb.png",
     website: "https://observatoriodarestauracao.org.br/app/dashboard",
     content:
@@ -20,7 +19,6 @@ export const PROJECTS: Project[] = [
     title: "IFlightController",
     description:
       "Controlador de voo para drones quadrirotores desenvolvido em Python e JavaScript com comunicação por WebSockets.",
-    tags: ["Python", "WebSockets", "HTML Canvas"],
     thumbnail: "./assets/images/iflight-thumb.jpg",
     website: "https://github.com/pedrohov/IFlightController",
     content:
@@ -35,7 +33,6 @@ export const PROJECTS: Project[] = [
     title: "Scrabble",
     description:
       "Implementação de uma inteligência artificial para jogar o famoso jogo de palavras cruzadas Scrabble. Tanto o jogo quanto a IA foram desenvolvidos em Python.",
-    tags: ["Python"],
     thumbnail: "./assets/images/scrabble-thumb.jpg",
     website: "https://github.com/pedrohov/Scrabble",
     content:
@@ -49,7 +46,6 @@ export const PROJECTS: Project[] = [
     title: "PRYSM",
     description:
       "Jogo de plataforma 2D minimalista ilustrado com formas geométricas. Desenvolvido em JavaScript/Phaser e empacotado para Android com Cordova Apache.",
-    tags: ["JavaScript"],
     thumbnail: "./assets/images/prysm-thumb.jpg",
     website: "https://www.youtube.com/watch?v=3uc9dal6t7E",
     content:
@@ -64,7 +60,6 @@ export const PROJECTS: Project[] = [
     title: "Sistema de Pedidos",
     description:
       "Protótipo de um sistema de pedidos para restaurantes. Permite ao cliente realizar pedidos por celular. O restaurante controla os pedidos de acordo com o tempo de espera. Desenvolvido em Arduino/Processing e React Native.",
-    tags: ["React Native", "Arduino"],
     thumbnail: "./assets/images/sistemapedidos-thumb.jpg",
     website: "https://github.com/pedrohov/Sistemas-de-Pedidos",
     content:
@@ -78,7 +73,6 @@ export const PROJECTS: Project[] = [
     title: "Sistema para Gerenciamento de Lojas",
     description:
       "Sistema para gerenciar lojas e estabelecimentos de atendimento de pequeno e médio porte. Back end desenvolvido em Java, JPA e o banco de dados relacional MySQL. Segurança e autenticação com Spring Security.",
-    tags: ["Java", "JPA/MySQL"],
     thumbnail: "./assets/images/sistvendasjava-thumb.jpg",
     website: "https://github.com/pedrohov/Sistema-Web-de-Vendas-e-Atendimentos",
     content:

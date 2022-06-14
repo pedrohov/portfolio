@@ -26,6 +26,7 @@ export class MapComponent implements AfterViewInit, OnDestroy {
 
   private chartId: string = Math.random().toString(36).substring(2);
   private subscriptions: Subscription[] = [];
+  private isAnimating: boolean = false;
 
   ngAfterViewInit() {
     this.create();
@@ -106,16 +107,26 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       .attr("stroke", this.color ? this.color : "url(#animate-gradient)")
       .attr("opacity", 0);
 
+    const FADE_IN_DURATION = 2000;
+
     featureGroup
       .transition()
       .delay(this.fadeInDelay)
-      .duration(2000)
+      .duration(FADE_IN_DURATION)
       .attr("opacity", this.color ? 1 : 0.35);
 
-    if (this.enableEvents)
+    if (this.enableEvents) {
       featureGroup.on("pointerover", (event) => {
+        if (this.isAnimating) return;
         select(event.target).transition().duration(400).attr("fill-opacity", 1);
       });
+
+      this.isAnimating = true;
+      setTimeout(
+        () => (this.isAnimating = false),
+        this.fadeInDelay + FADE_IN_DURATION
+      );
+    }
   }
 
   ngOnDestroy() {
