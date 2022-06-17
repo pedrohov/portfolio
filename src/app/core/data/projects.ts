@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
     thumbnail: "./assets/images/obs-thumb.png",
     link: "https://observatoriodarestauracao.org.br/app/dashboard",
     content:
-      "The Observatory gathers field information with satellite data to provide an overview of the reforestation and restoration situation in all Brazilian biomes. The challenge of the project was to create friendlier charts to summarize all the data available at the Observatory.",
+      "The Observatory gathers field information with satellite data to provide an overview of the reforestation and restoration situation in all Brazilian biomes.",
     pictures: [
       "./assets/images/obs-thumb.png",
       "./assets/images/observatory/reforestation.png",
@@ -19,7 +19,8 @@ export const PROJECTS: Project[] = [
       name: "Coalizão Brasil",
       link: "https://www.coalizaobr.com.br/",
     },
-    challenges: "",
+    challenges:
+      "The challenge of the project was to create friendlier charts to summarize all the data available at the Observatory.",
   },
   {
     title: "Cerrado Conservation Mechanism",

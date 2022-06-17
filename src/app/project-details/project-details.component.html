@@ -1,20 +1,22 @@
 <div class="container">
-  <h1>{{ project.title }}</h1>
-  <p>{{ project.content }}</p>
+  <header>
+    <h1>{{ project.title }}</h1>
+    <h2>{{ project.content }}</h2>
+  </header>
 
-  <div>
+  <div class="details">
     <h5>Role</h5>
     <p>{{ project.role }}</p>
   </div>
 
-  <div *ngIf="project.client">
+  <div class="details" *ngIf="project.client">
     <h5>Client</h5>
     <a [href]="project.client.link" _target="blank">{{
       project.client.name
     }}</a>
   </div>
 
-  <div>
+  <div class="details">
     <h5>Link</h5>
     <a [href]="project.link" _target="blank">{{ project.link }}</a>
   </div>
