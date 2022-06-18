@@ -21,3 +21,5 @@
     <a [href]="project.link" _target="blank">{{ project.link }}</a>
   </div>
 </div>
+
+<next-project *ngIf="nextProject" [project]="nextProject"></next-project>

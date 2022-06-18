@@ -18,4 +18,8 @@ export class ProjectService {
     if (!project) return throwError(`Project ${title} not found`);
     return of(project);
   }
+
+  getNextProjectAfter(project: Project): Observable<Project | undefined> {
+    return of(PROJECTS[PROJECTS.indexOf(project) + 1]);
+  }
 }

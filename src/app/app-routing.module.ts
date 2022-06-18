@@ -6,7 +6,7 @@ import { ProjectDetailsComponent } from "./project-details/project-details.compo
 
 export const ROUTES: Routes = [
   {
-    path: "projects/:title",
+    path: ":title",
     component: ProjectDetailsComponent,
     data: { animation: "Portfolio" },
   },
