@@ -1,4 +1,21 @@
-<section class="container">
-  <h6>Next project</h6>
-  <a routerLink="/{{ project.title }}">{{ project.title }}</a>
+<section>
+  <a routerLink="/{{ project.title }}" class="container">
+    <h6>Next project</h6>
+    {{ project.title }}
+
+    <div class="view-project">
+      <span>View project</span>
+      <svg
+        width="32"
+        height="32"
+        viewBox="0 0 48 48"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M35.1 32.95L32.95 30.85L38.25 25.55H6V22.55H38.3L33 17.25L35.1 15.15L44 24.05L35.1 32.95Z"
+          fill="currentColor"
+        />
+      </svg>
+    </div>
+  </a>
 </section>
