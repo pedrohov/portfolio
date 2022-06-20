@@ -24,7 +24,8 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Cerrado Conservation Mechanism",
-    description: "",
+    description:
+      "A platform to financially compensate soy producers in the Cerrado biome who give up their right to transform the legal reserve surplus into soy crops.",
     thumbnail: "",
     link: "https://psacerrado.com.br/",
     content: "",
@@ -38,7 +39,8 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "SIMFaz",
-    description: "",
+    description:
+      "A intelligent web system to monitor environmental, social and financial risks in Agro.",
     thumbnail: "",
     link: "https://simfaz.agrosatelite.com.br/",
     content: "",
@@ -52,7 +54,8 @@ export const PROJECTS: Project[] = [
   },
   {
     title: "Agroideal",
-    description: "",
+    description:
+      "A free online, territorial intelligence system that supports decision-making and territorial assessment of socio-environmental risks.",
     thumbnail: "",
     link: "https://agroideal.org/",
     content: "",
