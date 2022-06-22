@@ -33,3 +33,16 @@ a {
     text-decoration: underline;
   }
 }
+
+.home-link {
+  position: fixed;
+  top: 50px;
+  left: 70px;
+  transform: rotate(180deg);
+  color: #838383;
+  transition: color 0.2s;
+
+  &:hover {
+    color: var(--text-secondary);
+  }
+}
