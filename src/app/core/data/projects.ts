@@ -20,7 +20,7 @@ export const PROJECTS: Project[] = [
       link: "https://www.coalizaobr.com.br/",
     },
     challenges:
-      "The challenge of the project was to create friendlier charts to summarize all the data available at the Observatory.",
+      "Creating friendly charts to summarize all the data available at the Observatory using only the existing endpoints was the biggest challenge for this project.",
   },
   {
     title: "Cerrado Conservation Mechanism",
@@ -35,7 +35,8 @@ export const PROJECTS: Project[] = [
       name: "Abiove",
       link: "https://abiove.org.br/",
     },
-    challenges: "",
+    challenges:
+      "The client wanted a way to display some of the geographical data in their landing page. If we put a map taking the entire screen it would feel off. It was challenging trying to figure out how to present all the data in a more interactive way without using tools like openlayers or google maps. In the end, the client loved the end result!",
   },
   {
     title: "SIMFaz",
@@ -50,7 +51,8 @@ export const PROJECTS: Project[] = [
       name: "Agrosatélite",
       link: "https://www.agrosatelite.com.br/",
     },
-    challenges: "",
+    challenges:
+      "SIMFaz is an ever growing farm monitoring system. The team has lots of ideas for the platform, we also have some clients using parts of the system that are more mature. Creating this product is what feels like doing a heart transplant, you have to keep it alive while making big changes. It is definitely challenging!",
   },
   {
     title: "Agroideal",
@@ -65,6 +67,7 @@ export const PROJECTS: Project[] = [
       name: "The Nature Conservancy",
       link: "https://www.nature.org/en-us/",
     },
-    challenges: "",
+    challenges:
+      "Agroideal is one of Agrosatélite's oldest web app. It was made with technologies that I never worked with before and yet I had the challenge to give this system maintenance.",
   },
 ];
