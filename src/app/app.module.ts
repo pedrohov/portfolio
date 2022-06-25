@@ -10,7 +10,6 @@ import { NextProjectComponent } from "./next-project/next-project.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ProjectCardComponent } from "./project-card/project-card.component";
 import { ProjectDetailsComponent } from "./project-details/project-details.component";
-import { SharedModule } from "./shared/shared.module";
 import { SideProjectComponent } from "./side-project/side-project.component";
 
 @NgModule({
@@ -24,12 +23,7 @@ import { SideProjectComponent } from "./side-project/side-project.component";
     SideProjectComponent,
     NextProjectComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    SharedModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
