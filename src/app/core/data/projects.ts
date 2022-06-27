@@ -5,15 +5,11 @@ export const PROJECTS: Project[] = [
     title: "Restoration and Reforestation Observatory Dashboard",
     description:
       "A dashboard for visualizing reforestation and restauration numbers mapped by the Observatory in Brazil.",
-    thumbnail: "./assets/images/obs-thumb.png",
+    thumbnail: "",
     link: "https://observatoriodarestauracao.org.br/app/dashboard",
     content:
       "The Observatory gathers field information with satellite data to provide an overview of the reforestation and restoration situation in all Brazilian biomes.",
-    pictures: [
-      "./assets/images/obs-thumb.png",
-      "./assets/images/observatory/reforestation.png",
-      "./assets/images/observatory/reforestation-by-state.png",
-    ],
+    pictures: [],
     role: "Data visualization developer",
     client: {
       name: "Coalizão Brasil",
@@ -26,7 +22,7 @@ export const PROJECTS: Project[] = [
     title: "Cerrado Conservation Mechanism",
     description:
       "A platform to financially compensate soy producers in the Cerrado biome who give up their right to transform the legal reserve surplus into soy crops.",
-    thumbnail: "",
+    thumbnail: "./assets/images/ccms_thumbnail.png",
     link: "https://psacerrado.com.br/",
     content: "",
     pictures: [],

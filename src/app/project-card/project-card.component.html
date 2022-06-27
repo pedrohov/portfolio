@@ -1,12 +1,3 @@
-<!-- <a class="project-card" routerLink="/projects/{{ project.title }}">
-  <img [src]="project.thumbnail" alt="{{ project.title }}" />
-  <div class="project-card__wrapper">
-    <div class="project-card__description">
-      <p class="project-card__title">{{ project.title }}</p>
-      <p>{{ project.description }}</p>
-    </div>
-  </div>
-</a> -->
 <div class="project-wrapper">
   <div class="project-details">
     <h4>{{ project.title }}</h4>
@@ -28,7 +19,14 @@
     ></a>
   </div>
 
-  <figure class="image-placeholder">
-    <!-- <img [src]="project.thumbnail" alt="{{ project.title }}" /> -->
+  <figure
+    class="project-thumbnail"
+    *ngIf="project.thumbnail; else thumbnailPlaceholder"
+  >
+    <img src="{{ project.thumbnail }}" alt="{{ project.title }}" />
   </figure>
+
+  <ng-template #thumbnailPlaceholder>
+    <figure class="image-placeholder"></figure
+  ></ng-template>
 </div>
