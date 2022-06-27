@@ -4,13 +4,13 @@ export const SIDE_PROJECTS: SideProject[] = [
   {
     title: "IFlightController",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse odio ex, pulvinar vel risus in, tristique pretium nisl. Ut blandit faucibus nulla nec hendrerit. Suspendisse potenti. Vestibulum et rhoncus enim. Aliquam tempor sodales pulvinar.",
+      "Prototype of a flight controller using Raspberry Pi",
     link: "https://github.com/pedrohov/IFlightController",
   },
   {
     title: "Raspberry Pi Localization and Mapping",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse odio ex, pulvinar vel risus in, tristique pretium nisl. Ut blandit faucibus nulla nec hendrerit. Suspendisse potenti. Vestibulum et rhoncus enim. Aliquam tempor sodales pulvinar.",
+      "Prototype of a mapping robot using localization and mapping techniques to create indoor raster maps. Developed as graduation dissertation for Computer science",
     link: "https://github.com/pedrohov/rpi-localization-mapping",
   },
 ];
