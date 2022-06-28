@@ -4,7 +4,7 @@ export const SIDE_PROJECTS: SideProject[] = [
   {
     title: "IFlightController",
     description:
-      "Prototype of a flight controller using Raspberry Pi",
+      "Prototype of a flight controller using Raspberry Pi. It features a web interface to control the quadcopter via websockets. The server reads sensor data and attempts to stabilize the quadcopter by controlling the rotation speed of each motor",
     link: "https://github.com/pedrohov/IFlightController",
   },
   {
