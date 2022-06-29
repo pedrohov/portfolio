@@ -5,7 +5,7 @@ export const PROJECTS: Project[] = [
     title: "Restoration and Reforestation Observatory Dashboard",
     description:
       "A dashboard for visualizing reforestation and restauration numbers mapped by the Observatory in Brazil.",
-    thumbnail: "",
+    thumbnail: "./assets/images/observatorio_thumbnail.png",
     link: "https://observatoriodarestauracao.org.br/app/dashboard",
     content:
       "The Observatory gathers field information with satellite data to provide an overview of the reforestation and restoration situation in all Brazilian biomes.",
@@ -38,7 +38,7 @@ export const PROJECTS: Project[] = [
     title: "SIMFaz",
     description:
       "A intelligent web system to monitor environmental, social and financial risks in Agro.",
-    thumbnail: "",
+    thumbnail: "./assets/images/simfaz_thumbnail.png",
     link: "https://simfaz.agrosatelite.com.br/",
     content: "",
     pictures: [],
@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
     title: "Agroideal",
     description:
       "A free online, territorial intelligence system that supports decision-making and territorial assessment of socio-environmental risks.",
-    thumbnail: "",
+    thumbnail: "./assets/images/agroideal_thumbnail.png",
     link: "https://agroideal.org/",
     content: "",
     pictures: [],
