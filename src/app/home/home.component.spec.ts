@@ -9,6 +9,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ROUTES } from "../app-routing.module";
+import { MapComponent } from "../map/map.component";
 import { PortfolioComponent } from "../portfolio/portfolio.component";
 import { ProjectCardComponent } from "../project-card/project-card.component";
 import { SideProjectComponent } from "../side-project/side-project.component";
@@ -32,6 +33,7 @@ describe("HomeComponent", () => {
         PortfolioComponent,
         SideProjectComponent,
         ProjectCardComponent,
+        MapComponent,
       ],
     }).compileComponents();
 

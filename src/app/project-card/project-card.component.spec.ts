@@ -53,7 +53,7 @@ describe("ProjectCardComponent", () => {
     link.click();
     tick();
     expect(router.url).toBe(
-      `/projects/${component.project.title.replaceAll(" ", "%20")}`
+      `/${component.project.title.replaceAll(" ", "%20")}`
     );
   }));
 });
