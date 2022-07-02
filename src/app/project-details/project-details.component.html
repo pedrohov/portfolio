@@ -33,6 +33,8 @@
     <h5>Link</h5>
     <a [href]="project.link" _target="blank">{{ project.link }}</a>
   </div>
+
+  <p class="challenges">{{ project.challenges }}</p>
 </div>
 
 <next-project *ngIf="nextProject" [project]="nextProject"></next-project>
