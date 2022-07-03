@@ -107,7 +107,7 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       .attr("stroke", this.color ? this.color : "url(#animate-gradient)")
       .attr("opacity", 0);
 
-    const FADE_IN_DURATION = 2000;
+    const FADE_IN_DURATION = 600;
 
     featureGroup
       .transition()
