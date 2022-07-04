@@ -1,17 +1,16 @@
 import {
+  AfterViewInit,
   Component,
   ElementRef,
-  ViewChild,
-  HostListener,
   Input,
-  AfterViewInit,
   OnDestroy,
+  ViewChild,
 } from "@angular/core";
-import { geoMercator, geoPath } from "d3-geo";
 import { select } from "d3";
-import minas from "src/assets/maps/pastagem.json";
+import { geoMercator, geoPath } from "d3-geo";
 import { fromEvent, Subscription } from "rxjs";
 import { throttleTime } from "rxjs/operators";
+import minas from "src/assets/maps/pastagem.json";
 
 @Component({
   selector: "map",
@@ -21,14 +20,17 @@ import { throttleTime } from "rxjs/operators";
 export class MapComponent implements AfterViewInit, OnDestroy {
   @ViewChild("container") containerRef!: ElementRef;
   @Input() color?: string;
+  @Input() colors: string[] = ["#46105F", "#3A518A", "#59AE6F", "#f02ab3"];
   @Input() enableEvents: boolean = false;
   @Input() fadeInDelay: number = 0;
 
   private chartId: string = Math.random().toString(36).substring(2);
   private subscriptions: Subscription[] = [];
-  private isAnimating: boolean = false;
 
-  ngAfterViewInit() {
+  private isAnimating: boolean = false;
+  private readonly FADE_IN_DURATION = 600;
+
+  ngAfterViewInit(): void {
     this.create();
 
     this.subscriptions.push(
@@ -83,14 +85,12 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       .attr("y2", "0")
       .attr("gradientTransform", "rotate(-25)");
 
-    const colors = ["#46105F", "#3A518A", "#59AE6F", "#f02ab3"];
-
     linearGradient
       .selectAll(".stop")
-      .data(colors)
+      .data(this.colors)
       .enter()
       .append("stop")
-      .attr("offset", (_, i) => i / (colors.length - 1))
+      .attr("offset", (_, i) => i / (this.colors.length - 1))
       .attr("stop-color", (d) => d);
 
     const projection = geoMercator().fitSize([width, height], minas as any);
@@ -107,12 +107,10 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       .attr("stroke", this.color ? this.color : "url(#animate-gradient)")
       .attr("opacity", 0);
 
-    const FADE_IN_DURATION = 600;
-
     featureGroup
       .transition()
       .delay(this.fadeInDelay)
-      .duration(FADE_IN_DURATION)
+      .duration(this.FADE_IN_DURATION)
       .attr("opacity", this.color ? 1 : 0.35);
 
     if (this.enableEvents) {
@@ -124,12 +122,12 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       this.isAnimating = true;
       setTimeout(
         () => (this.isAnimating = false),
-        this.fadeInDelay + FADE_IN_DURATION
+        this.fadeInDelay + this.FADE_IN_DURATION
       );
     }
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscriptions.forEach((s) => s.unsubscribe());
   }
 }
