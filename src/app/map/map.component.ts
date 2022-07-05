@@ -10,7 +10,7 @@ import { select } from "d3";
 import { geoMercator, geoPath } from "d3-geo";
 import { fromEvent, Subscription } from "rxjs";
 import { throttleTime } from "rxjs/operators";
-import minas from "src/assets/maps/pastagem.json";
+import pastagem_data from "src/assets/maps/pastagem.json";
 
 @Component({
   selector: "map",
@@ -93,13 +93,16 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       .attr("offset", (_, i) => i / (this.colors.length - 1))
       .attr("stop-color", (d) => d);
 
-    const projection = geoMercator().fitSize([width, height], minas as any);
+    const projection = geoMercator().fitSize(
+      [width, height],
+      pastagem_data as any
+    );
     const pathGenerator = geoPath().projection(projection) as any;
 
     const featureGroup = svg
       .append("g")
       .selectAll("path")
-      .data(minas.features)
+      .data(pastagem_data.features)
       .join("path")
       .attr("d", pathGenerator)
       .attr("fill", "url(#animate-gradient)")
