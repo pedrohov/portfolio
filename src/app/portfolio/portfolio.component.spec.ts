@@ -2,7 +2,7 @@ import { CommonModule } from "@angular/common";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterTestingModule } from "@angular/router/testing";
-import { PROJECTS } from "@core/data/projects";
+import { PROJECTS } from "src/assets/projects/projects";
 import { ProjectCardComponent } from "../project-card/project-card.component";
 import { PortfolioComponent } from "./portfolio.component";
 

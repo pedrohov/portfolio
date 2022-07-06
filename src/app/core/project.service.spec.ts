@@ -1,6 +1,6 @@
 import { TestBed } from "@angular/core/testing";
 import { throwError } from "rxjs";
-import { PROJECTS } from "./data/projects";
+import { PROJECTS } from "../../assets/projects/projects";
 import { ProjectService } from "./project.service";
 
 describe("ProjectService", () => {

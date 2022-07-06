@@ -1,5 +1,5 @@
 import { TestBed } from "@angular/core/testing";
-import { SIDE_PROJECTS } from "./data/side-projects";
+import { SIDE_PROJECTS } from "../../assets/projects/side-projects";
 import { SideProjectService } from "./side-project.service";
 
 describe("SideProjectService", () => {

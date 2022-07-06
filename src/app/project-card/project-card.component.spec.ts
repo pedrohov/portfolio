@@ -5,7 +5,7 @@ import {
   tick,
 } from "@angular/core/testing";
 import { ProjectCardComponent } from "./project-card.component";
-import { PROJECTS } from "@core/data/projects";
+import { PROJECTS } from "src/assets/projects/projects";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ROUTES } from "src/app/app-routing.module";
 import { Router } from "@angular/router";
