@@ -20,6 +20,6 @@ export class ProjectService {
   }
 
   getNextProjectAfter(project: Project): Observable<Project | undefined> {
-    return of(PROJECTS[PROJECTS.indexOf(project) + 1]);
+    return of(PROJECTS[PROJECTS.indexOf(project) + 1] || PROJECTS[0]);
   }
 }

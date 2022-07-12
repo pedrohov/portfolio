@@ -20,7 +20,10 @@ import pastagem_data from "src/assets/maps/pastagem.json";
 export class MapComponent implements AfterViewInit, OnDestroy {
   @ViewChild("container") containerRef!: ElementRef;
   @Input() color?: string;
-  @Input() colors: string[] = ["#46105F", "#3A518A", "#59AE6F", "#f02ab3"];
+  @Input() colors: string[] = [
+    "#292929",
+    "#3A518A",
+  ]; /* ["#46105F", "#3A518A", "#59AE6F", "#f02ab3"]*/
   @Input() enableEvents: boolean = false;
   @Input() fadeInDelay: number = 0;
 
@@ -28,7 +31,7 @@ export class MapComponent implements AfterViewInit, OnDestroy {
   private subscriptions: Subscription[] = [];
 
   private isAnimating: boolean = false;
-  private readonly FADE_IN_DURATION = 600;
+  private readonly FADE_IN_DURATION = 200;
 
   ngAfterViewInit(): void {
     this.create();
