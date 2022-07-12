@@ -33,17 +33,17 @@ describe("ProjectCardComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should have as title 'Restoration and Reforestation Observatory Dashboard'", () => {
+  it("should have a", () => {
     fixture.detectChanges();
     expect(element.querySelector("h4").textContent).toContain(
-      "Restoration and Reforestation Observatory Dashboard"
+      PROJECTS[0].title
     );
   });
 
   it("should have a description", () => {
     fixture.detectChanges();
     expect(element.querySelector("p").textContent).toContain(
-      "A dashboard for visualizing reforestation and restauration numbers mapped by the Observatory in Brazil."
+      PROJECTS[0].description
     );
   });
 

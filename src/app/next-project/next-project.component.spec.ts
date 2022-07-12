@@ -4,31 +4,24 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterTestingModule } from "@angular/router/testing";
 import { PROJECTS } from "src/assets/projects/projects";
 import { ProjectCardComponent } from "../project-card/project-card.component";
-import { PortfolioComponent } from "./portfolio.component";
+import { NextProjectComponent } from "./next-project.component";
 
-describe("PortfolioComponent", () => {
-  let component: PortfolioComponent;
-  let fixture: ComponentFixture<PortfolioComponent>;
+describe("NextProjectComponent", () => {
+  let component: NextProjectComponent;
+  let fixture: ComponentFixture<NextProjectComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [CommonModule, BrowserAnimationsModule, RouterTestingModule],
-      declarations: [PortfolioComponent, ProjectCardComponent],
+      declarations: [NextProjectComponent, ProjectCardComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(PortfolioComponent);
+    fixture = TestBed.createComponent(NextProjectComponent);
     component = fixture.componentInstance;
+    component.project = PROJECTS[0];
   });
 
-  it("should create the Portfolio", () => {
+  it("should create the component", () => {
     expect(component).toBeTruthy();
-  });
-
-  it("should fetch all projects", () => {
-    let projects = [];
-    component.getProjects();
-    component.projects$.subscribe((p) => (projects = p));
-    fixture.detectChanges();
-    expect(projects).toEqual(PROJECTS);
   });
 });

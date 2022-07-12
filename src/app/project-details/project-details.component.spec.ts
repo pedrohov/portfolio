@@ -25,17 +25,17 @@ describe("ProjectDetailsComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should have as title 'Restoration and Reforestation Observatory Dashboard'", () => {
+  it("should have a title", () => {
     fixture.detectChanges();
     expect(element.querySelector("h1").textContent).toContain(
-      "Restoration and Reforestation Observatory Dashboard"
+      PROJECTS[0].title
     );
   });
 
   it("should have a content description", () => {
     fixture.detectChanges();
-    expect(element.querySelector("h2").textContent).toContain(
-      "The Observatory gathers field information with satellite data to provide an overview of the reforestation and restoration situation in all Brazilian biomes."
+    expect(element.querySelector("h2").textContent).toEqual(
+      PROJECTS[0].content
     );
   });
 });
