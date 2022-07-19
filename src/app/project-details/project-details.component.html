@@ -24,14 +24,14 @@
 
   <div class="details" *ngIf="project.client">
     <h5>Client</h5>
-    <a [href]="project.client.link" _target="blank">{{
+    <a [href]="project.client.link" target="_blank">{{
       project.client.name
     }}</a>
   </div>
 
   <div class="details">
     <h5>Link</h5>
-    <a [href]="project.link" _target="blank">{{ project.link }}</a>
+    <a [href]="project.link" target="_blank">{{ project.link }}</a>
   </div>
 
   <p class="challenges">{{ project.challenges }}</p>

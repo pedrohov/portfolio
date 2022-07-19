@@ -31,10 +31,11 @@
     <div class="side-projects__wrapper">
       <h2>Side Projects</h2>
       <div class="side-projects__list">
-        <app-side-project
+        <section
+          side-project
           *ngFor="let sideProject of sideProjects$ | async"
           [sideProject]="sideProject"
-        ></app-side-project>
+        ></section>
       </div>
     </div>
   </div>
