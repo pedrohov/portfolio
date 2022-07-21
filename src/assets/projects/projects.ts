@@ -4,12 +4,13 @@ export const PROJECTS: Project[] = [
   {
     title: "SIMFaz",
     description:
-      "A intelligent web system to monitor environmental, social and financial risks in Agro.",
+      "An intelligent web system to monitor environmental, social and financial risks in Agro.",
     thumbnail: "./assets/images/simfaz_thumbnail.png",
     link: "https://simfaz.agrosatelite.com.br/",
-    content: "",
+    content:
+      "An intelligent web system to monitor environmental, social and financial risks in Agro. SIMFaz presents information about crops and socioenvironmental compliance of farms in a user friendly interface. This data is also available for clients via APIs.",
     pictures: [],
-    role: "Frontend engineer",
+    role: "Analyst developer",
     client: {
       name: "Agrosatélite",
       link: "https://www.agrosatelite.com.br/",
@@ -23,7 +24,8 @@ export const PROJECTS: Project[] = [
       "A platform to financially compensate soy producers in the Cerrado biome who give up their right to transform the legal reserve surplus into soy crops.",
     thumbnail: "./assets/images/ccms_thumbnail.png",
     link: "https://psacerrado.com.br/",
-    content: "",
+    content:
+      "A platform to financially compensate soy producers in the Cerrado biome who give up their right to transform the legal reserve surplus into soy crops.",
     pictures: [],
     role: "Frontend engineer",
     client: {
@@ -56,7 +58,8 @@ export const PROJECTS: Project[] = [
       "A free online, territorial intelligence system that supports decision-making and territorial assessment of socio-environmental risks.",
     thumbnail: "./assets/images/agroideal_thumbnail.png",
     link: "https://agroideal.org/",
-    content: "",
+    content:
+      "A free online, territorial intelligence system that supports decision-making and territorial assessment of socio-environmental risks.",
     pictures: [],
     role: "Developer analyst",
     client: {

@@ -31,7 +31,13 @@ h2 {
   left: 50%;
   bottom: 60px;
   transform: translateX(-50%);
-  color: var(--text-secondary);
+  color: #838383;
+  transition: color 0.2s;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--text-secondary);
+  }
 }
 
 .side-projects {

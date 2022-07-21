@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import {
   trigger,
   style,
@@ -25,15 +25,21 @@ import { Observable } from "rxjs";
   ],
 })
 export class HomeComponent {
+  @ViewChild("projectsSection", { read: ElementRef })
+  projectsSection!: ElementRef;
   sideProjects$: Observable<SideProject[]>;
 
   constructor(private sideProjectService: SideProjectService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getProjects();
   }
 
   getProjects(): void {
     this.sideProjects$ = this.sideProjectService.getSideProjects();
+  }
+
+  goToProjects(): void {
+    this.projectsSection.nativeElement.scrollIntoView({ behavior: "smooth" });
   }
 }
