@@ -84,17 +84,16 @@ div:focus {
   justify-content: end;
 }
 
-/* Grid Utils */
 .container {
   width: 100%;
   margin: 0 auto;
-  padding: 150px 50px;
+  padding: 4rem 3rem;
 }
 
-/* Media Queries */
 @media (min-width: 576px) {
   .container {
     max-width: 540px;
+    padding: 9rem 3rem;
   }
   h1 {
     font-size: 2.5rem;

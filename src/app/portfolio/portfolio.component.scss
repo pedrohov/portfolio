@@ -1,5 +1,16 @@
 .project-card {
   width: 100%;
-  // min-width: 300px;
-  // margin: $card-margin;
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+  padding: 4rem 0;
+}
+
+@media (min-width: 576px) {
+  .project-list {
+    padding: 8rem 0;
+  }
 }
