@@ -37,6 +37,7 @@ export class ProjectDetailsComponent {
       (project: Project) => {
         this.project = project;
         this.selected = this.project.thumbnail;
+        document.title = `${project.title} - Pedro Veloso`;
         this.projectService
           .getNextProjectAfter(this.project)
           .subscribe((nextProject) => {
