@@ -1,7 +1,10 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { Title } from "@angular/platform-browser";
+import { ActivatedRoute } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { PROJECTS } from "src/assets/projects/projects";
 import { ROUTES } from "../app-routing.module";
+import { NextProjectComponent } from "../next-project/next-project.component";
 import { ProjectDetailsComponent } from "./project-details.component";
 
 describe("ProjectDetailsComponent", () => {
@@ -12,7 +15,16 @@ describe("ProjectDetailsComponent", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule.withRoutes(ROUTES)],
-      declarations: [ProjectDetailsComponent],
+      declarations: [ProjectDetailsComponent, NextProjectComponent],
+      providers: [
+        Title,
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: { paramMap: { get: () => PROJECTS[0].title } },
+          },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ProjectDetailsComponent);
@@ -30,6 +42,13 @@ describe("ProjectDetailsComponent", () => {
     expect(element.querySelector("h1").textContent).toContain(
       PROJECTS[0].title
     );
+  });
+
+  it("should change the page title", () => {
+    component.getProject();
+    fixture.detectChanges();
+    const title = TestBed.inject(Title);
+    expect(title.getTitle()).toContain(PROJECTS[0].title);
   });
 
   it("should have a content description", () => {

@@ -9,6 +9,7 @@ import {
 import { SideProjectService } from "@core/side-project.service";
 import { SideProject } from "@core/models/side-project";
 import { Observable } from "rxjs";
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: "app-home",
@@ -29,10 +30,14 @@ export class HomeComponent {
   projectsSection!: ElementRef;
   sideProjects$: Observable<SideProject[]>;
 
-  constructor(private sideProjectService: SideProjectService) {}
+  constructor(
+    private sideProjectService: SideProjectService,
+    private title: Title
+  ) {}
 
   ngOnInit(): void {
     this.getProjects();
+    this.title.setTitle("Portfolio - Pedro Veloso");
   }
 
   getProjects(): void {

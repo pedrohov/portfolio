@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { Title } from "@angular/platform-browser";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 import { Project } from "@core/models/project";
 import { ProjectService } from "@core/project.service";
@@ -18,7 +19,8 @@ export class ProjectDetailsComponent {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
+    public route: ActivatedRoute,
+    private title: Title,
     private projectService: ProjectService
   ) {
     this.routeSub = router.events
@@ -37,7 +39,7 @@ export class ProjectDetailsComponent {
       (project: Project) => {
         this.project = project;
         this.selected = this.project.thumbnail;
-        document.title = `${project.title} - Pedro Veloso`;
+        this.title.setTitle(`${project.title} - Pedro Veloso`);
         this.projectService
           .getNextProjectAfter(this.project)
           .subscribe((nextProject) => {
