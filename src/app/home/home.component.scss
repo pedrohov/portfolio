@@ -62,6 +62,21 @@
   }
 }
 
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 4rem;
+
+  &__link {
+    color: var(--text-secondary);
+    transition: color 0.2s;
+
+    &:hover {
+      color: var(--font-color-primary);
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .inner-map {
     display: block;
