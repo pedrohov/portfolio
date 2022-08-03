@@ -52,21 +52,4 @@ export const PROJECTS: Project[] = [
     challenges:
       "Creating friendly charts to summarize all the data available at the Observatory using only the existing endpoints was the biggest challenge for this project.",
   },
-  {
-    title: "Agroideal",
-    description:
-      "A free online, territorial intelligence system that supports decision-making and territorial assessment of socio-environmental risks.",
-    thumbnail: "./assets/images/agroideal_thumbnail.png",
-    link: "https://agroideal.org/",
-    content:
-      "A free online, territorial intelligence system that supports decision-making and territorial assessment of socio-environmental risks.",
-    pictures: [],
-    role: "Developer analyst",
-    client: {
-      name: "The Nature Conservancy",
-      link: "https://www.nature.org/en-us/",
-    },
-    challenges:
-      "Agroideal is one of Agrosatélite's oldest web app. It was made with technologies that I never worked with before and yet I had the challenge to give this system maintenance.",
-  },
 ];
