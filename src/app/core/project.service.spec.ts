@@ -31,11 +31,12 @@ describe("ProjectService", () => {
     expect(proj).toEqual(project);
   });
 
-  it("should raise an error if the Project is not found", () => {
-    spyOn(projectService, "getProject").and.returnValue(
-      throwError("Project Invalid project not found")
-    );
-    projectService.getProject("Invalid project").subscribe(() => null);
-    expect(projectService.getProject).toHaveBeenCalled();
+  it("should raise an error if the Project is not found", async () => {
+    try {
+      await projectService.getProject("Invalid").toPromise();
+      fail("Get invalid project should throw an error");
+    } catch (err) {
+      expect(err).toBe("Project Invalid not found");
+    }
   });
 });

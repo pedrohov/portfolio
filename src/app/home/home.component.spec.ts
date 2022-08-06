@@ -54,7 +54,7 @@ describe("HomeComponent", () => {
     const subtitle = element.querySelector("h2") as HTMLElement;
     expect(subtitle).toBeTruthy();
     expect(subtitle.innerText).toContain(
-      "Hi! I’m Pedro, I build solutions for the web and other fun stuff."
+      "Hi! I’m Pedro, I build solutions using the web and other fun stuff."
     );
   });
 });
