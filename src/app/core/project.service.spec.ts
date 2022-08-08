@@ -26,9 +26,11 @@ describe("ProjectService", () => {
   });
 
   it("should fetch a single Project", () => {
-    let proj;
-    projectService.getProject(project.title).subscribe((p) => (proj = p));
-    expect(proj).toEqual(project);
+    spyOn(projectService, "getProject").and.callThrough();
+    projectService.getProject(project.title).subscribe((p) => {
+      expect(p).toEqual(project);
+    });
+    expect(projectService.getProject).toHaveBeenCalledWith(project.title);
   });
 
   it("should raise an error if the Project is not found", async () => {
@@ -38,5 +40,13 @@ describe("ProjectService", () => {
     } catch (err) {
       expect(err).toBe("Project Invalid not found");
     }
+  });
+
+  it("should be able to get the next Project", async () => {
+    spyOn(projectService, "getNextProjectAfter").and.callThrough();
+    projectService.getNextProjectAfter(project).subscribe((p) => {
+      expect(p).toBe(PROJECTS[1]);
+    });
+    expect(projectService.getNextProjectAfter).toHaveBeenCalledWith(project);
   });
 });

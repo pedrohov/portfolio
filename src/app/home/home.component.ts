@@ -36,11 +36,11 @@ export class HomeComponent {
   ) {}
 
   ngOnInit(): void {
-    this.getProjects();
+    this.getSideProjects();
     this.title.setTitle("Portfolio - Pedro Veloso");
   }
 
-  getProjects(): void {
+  getSideProjects(): void {
     this.sideProjects$ = this.sideProjectService.getSideProjects();
   }
 
