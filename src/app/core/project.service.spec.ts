@@ -49,4 +49,15 @@ describe("ProjectService", () => {
     });
     expect(projectService.getNextProjectAfter).toHaveBeenCalledWith(project);
   });
+
+  it("should get the first Project if there is no more projects in the list", async () => {
+    const lastProject = PROJECTS[PROJECTS.length - 1];
+    spyOn(projectService, "getNextProjectAfter").and.callThrough();
+    projectService.getNextProjectAfter(lastProject).subscribe((p) => {
+      expect(p).toBe(PROJECTS[0]);
+    });
+    expect(projectService.getNextProjectAfter).toHaveBeenCalledWith(
+      lastProject
+    );
+  });
 });

@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { environment } from "@env";
+import { EnvironmentService } from "./environment.service";
 
 declare const gtag: Function;
 
@@ -7,10 +7,11 @@ declare const gtag: Function;
   providedIn: "root",
 })
 export class GoogleAnalyticsService {
-  constructor() {}
+  constructor(private environmentService: EnvironmentService) {}
 
   /** Create the script tags only for production environments and only if there is a GA Tracking ID */
   public setupGoogleAnalytics(): void {
+    const environment = this.environmentService.getEnvironment();
     if (!environment.gaTrackingID || !environment.production) return;
     // register google tag manager
     const gTagManagerScript = document.createElement("script");
@@ -36,6 +37,7 @@ export class GoogleAnalyticsService {
    *  @param path Route path '/unit/new'
    */
   public sendPageViewEvent(path: string): boolean {
+    const environment = this.environmentService.getEnvironment();
     if (!environment.gaTrackingID || !environment.production) return false;
     gtag("config", "GA_MEASUREMENT_ID", { page_path: `/app${path}` });
     return true;

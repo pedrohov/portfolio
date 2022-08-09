@@ -1,12 +1,8 @@
 import { CommonModule } from "@angular/common";
-import { ElementRef } from "@angular/core";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { Router } from "@angular/router";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ProjectService } from "@core/project.service";
-import { take } from "rxjs/operators";
-import { PROJECTS } from "src/assets/projects/projects";
 import { SIDE_PROJECTS } from "src/assets/projects/side-projects";
 import { ROUTES } from "../app-routing.module";
 import { MapComponent } from "../map/map.component";
@@ -80,11 +76,13 @@ describe("HomeComponent", () => {
     expect(document.title).toBe("Portfolio - Pedro Veloso");
   });
 
-  // it("should scroll to the projects section", () => {
-  //   fixture.detectChanges();
-  //   component.goToProjects();
-  //   expect(window.scrollY).toBeGreaterThan(
-  //     document.querySelector<HTMLElement>("app-portfolio").offsetTop
-  //   );
-  // });
+  it("should scroll to the projects section", () => {
+    fixture.detectChanges();
+    const projectsSectionSpy = spyOn(
+      component.projectsSection.nativeElement,
+      "scrollIntoView"
+    );
+    component.goToProjects();
+    expect(projectsSectionSpy).toHaveBeenCalled();
+  });
 });

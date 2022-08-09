@@ -1,5 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { By } from "@angular/platform-browser";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterTestingModule } from "@angular/router/testing";
 import { PROJECTS } from "src/assets/projects/projects";
@@ -30,5 +31,9 @@ describe("PortfolioComponent", () => {
     component.projects$.subscribe((p) => (projects = p));
     fixture.detectChanges();
     expect(projects).toEqual(PROJECTS);
+    const sections = fixture.debugElement.queryAll(
+      By.directive(ProjectCardComponent)
+    );
+    expect(projects.length).toEqual(sections.length);
   });
 });
