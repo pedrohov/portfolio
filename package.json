@@ -7,7 +7,6 @@
     "build": "ng build --configuration production --base-href /portfolio/ --output-path=docs",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
     "coverage": "ng test --no-watch --code-coverage"
   },
   "private": true,
@@ -42,7 +41,6 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0"
   }
