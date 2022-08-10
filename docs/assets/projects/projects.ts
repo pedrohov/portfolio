@@ -5,7 +5,7 @@ export const PROJECTS: Project[] = [
     title: "SIMFaz",
     description:
       "An intelligent web system to monitor environmental, social and financial risks in Agro.",
-    thumbnail: "./assets/images/simfaz_thumbnail.png",
+    thumbnail: "./assets/images/simfaz_thumbnail.webp",
     link: "https://simfaz.agrosatelite.com.br/",
     content:
       "An intelligent web system to monitor environmental, social and financial risks in Agro. SIMFaz presents information about crops and socioenvironmental compliance of farms in a user friendly interface. This data is also available for clients via APIs.",
@@ -22,7 +22,7 @@ export const PROJECTS: Project[] = [
     title: "Cerrado Conservation Mechanism",
     description:
       "A platform to financially compensate soy producers in the Cerrado biome who give up their right to transform the legal reserve surplus into soy crops.",
-    thumbnail: "./assets/images/ccms_thumbnail.png",
+    thumbnail: "./assets/images/ccms_thumbnail.webp",
     link: "https://psacerrado.com.br/",
     content:
       "A platform to financially compensate soy producers in the Cerrado biome who give up their right to transform the legal reserve surplus into soy crops.",
@@ -39,7 +39,7 @@ export const PROJECTS: Project[] = [
     title: "Restoration and Reforestation Observatory Dashboard",
     description:
       "A dashboard for visualizing reforestation and restauration numbers mapped by the Observatory in Brazil.",
-    thumbnail: "./assets/images/observatorio_thumbnail.png",
+    thumbnail: "./assets/images/observatorio_thumbnail.webp",
     link: "https://observatoriodarestauracao.org.br/app/dashboard",
     content:
       "The Observatory gathers field information with satellite data to provide an overview of the reforestation and restoration situation in all Brazilian biomes.",

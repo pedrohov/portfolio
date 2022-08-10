@@ -35,7 +35,7 @@ describe("ProjectCardComponent", () => {
 
   it("should have a", () => {
     fixture.detectChanges();
-    expect(element.querySelector("h4").textContent).toContain(
+    expect(element.querySelector("h3").textContent).toContain(
       PROJECTS[0].title
     );
   });

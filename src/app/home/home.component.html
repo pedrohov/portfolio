@@ -14,6 +14,7 @@
           href="https://www.linkedin.com/in/pedro-veloso-b5677aa8/"
           target="_blank"
           class="socials__link"
+          aria-label="Linkedin"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,6 +32,7 @@
           href="https://github.com/pedrohov"
           target="_blank"
           class="socials__link"
+          aria-label="Github"
           ><svg
             aria-hidden="true"
             viewBox="0 0 16 16"
@@ -48,6 +50,7 @@
           href="https://codepen.io/pedrohov"
           target="_blank"
           class="socials__link"
+          aria-label="Codepen"
         >
           <svg viewBox="0 0 100 100" width="24" height="24" fill="currentColor">
             <path
@@ -57,7 +60,12 @@
       </div>
     </div>
 
-    <div (click)="goToProjects()" class="projects-arrow" role="button">
+    <div
+      (click)="goToProjects()"
+      class="projects-arrow"
+      role="button"
+      aria-label="Go to projects"
+    >
       <svg
         width="48"
         height="48"

@@ -24,7 +24,6 @@ import { SideProjectComponent } from "./side-project/side-project.component";
     NextProjectComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

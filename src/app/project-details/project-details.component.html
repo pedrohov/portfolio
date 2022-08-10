@@ -1,4 +1,4 @@
-<a routerLink="/" class="home-link">
+<a routerLink="/" class="home-link" aria-label="Back to home page">
   <svg
     width="32"
     height="32"
@@ -20,28 +20,26 @@
     <h2>{{ project.content }}</h2>
     <div>
       <div class="details">
-        <h5>Role</h5>
+        <h3>Role</h3>
         <p>{{ project.role }}</p>
       </div>
 
-      <!-- <div class="details" *ngIf="project.client">
-        <h5>Client</h5>
-        <a [href]="project.client.link" target="_blank">{{
-          project.client.name
-        }}</a>
-      </div> -->
-
       <div class="details">
-        <h5>Link</h5>
+        <h3>Link</h3>
         <a [href]="project.link" target="_blank">{{ project.link }}</a>
       </div>
     </div>
   </div>
 
   <section class="challenges">
-    <img src="{{ project.thumbnail }}" alt="{{ project.title }}" />
+    <img
+      src="{{ project.thumbnail }}"
+      alt="{{ project.title }}"
+      width="600"
+      height="400"
+    />
     <div>
-      <h4>Challenges</h4>
+      <h2>Challenges</h2>
       <p>{{ project.challenges }}</p>
     </div>
   </section>

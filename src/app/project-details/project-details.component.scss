@@ -16,7 +16,7 @@ header {
   gap: 6rem;
 }
 
-h5 {
+h3 {
   margin: 0;
   line-height: 1.5;
   letter-spacing: 1.15px;
@@ -42,7 +42,7 @@ h2 {
 
 a {
   text-decoration: none;
-  color: #2c9eff;
+  color: #0057a3;
 
   &:hover {
     text-decoration: underline;
@@ -75,10 +75,11 @@ a {
     height: auto;
   }
 
-  h4 {
+  h2 {
     font-size: 2rem;
     margin: 4rem 0 2rem;
     line-height: 2rem;
+    font-weight: 700;
   }
 
   p {
