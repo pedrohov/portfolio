@@ -1,0 +1,31 @@
+.theme-toggler {
+  width: 24px;
+  height: 24px;
+  padding: 4px;
+  cursor: pointer;
+  box-sizing: content-box;
+
+  &--toggled .theme-toggler__icons {
+    transform: translateX(-100%);
+  }
+
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.theme-toggler__icons {
+  display: flex;
+  color: var(--text-secondary);
+  transition: transform 0.2s;
+
+  svg {
+    flex-shrink: 0;
+  }
+}

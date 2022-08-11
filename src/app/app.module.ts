@@ -11,6 +11,7 @@ import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { ProjectCardComponent } from "./project-card/project-card.component";
 import { ProjectDetailsComponent } from "./project-details/project-details.component";
 import { SideProjectComponent } from "./side-project/side-project.component";
+import { ThemeTogglerComponent } from "./theme-toggler/theme-toggler.component";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { SideProjectComponent } from "./side-project/side-project.component";
     MapComponent,
     SideProjectComponent,
     NextProjectComponent,
+    ThemeTogglerComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   bootstrap: [AppComponent],

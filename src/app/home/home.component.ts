@@ -1,15 +1,15 @@
-import { Component, ElementRef, ViewChild } from "@angular/core";
 import {
-  trigger,
-  style,
-  transition,
   animate,
   animateChild,
+  style,
+  transition,
+  trigger,
 } from "@angular/animations";
-import { SideProjectService } from "@core/side-project.service";
-import { SideProject } from "@core/models/side-project";
-import { Observable } from "rxjs";
+import { Component, ElementRef, ViewChild } from "@angular/core";
 import { Title } from "@angular/platform-browser";
+import { SideProject } from "@core/models/side-project";
+import { SideProjectService } from "@core/side-project.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-home",

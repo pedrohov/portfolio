@@ -1,6 +1,7 @@
 :host {
   min-height: 100vh;
   display: block;
+  background-color: var(--surface-1);
 }
 
 header {
@@ -42,7 +43,7 @@ h2 {
 
 a {
   text-decoration: none;
-  color: #0057a3;
+  color: var(--link-color);
 
   &:hover {
     text-decoration: underline;

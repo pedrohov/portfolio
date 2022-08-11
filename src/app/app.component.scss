@@ -2,5 +2,11 @@ main {
   margin: 30px;
   overflow: hidden;
   position: relative;
-  background-color: #fff;
+  background-color: var(--surface-1);
+}
+
+.fixed-theme-toggler {
+  right: 10px;
+  bottom: 10px;
+  position: fixed;
 }

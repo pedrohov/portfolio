@@ -1,3 +1,8 @@
+:host {
+  display: block;
+  background-color: var(--surface-1);
+}
+
 .home {
   width: 100%;
   min-height: 500px;
@@ -5,9 +10,11 @@
   display: flex;
   box-sizing: border-box;
   position: relative;
+  pointer-events: none;
 
   &__header {
     max-width: 740px;
+    pointer-events: all;
   }
 }
 
@@ -16,7 +23,6 @@
   height: 800px;
   position: absolute;
   top: -30px;
-  right: 0;
   z-index: 1;
   transform: translateX(40%);
   display: none;
@@ -30,6 +36,7 @@
   color: #838383;
   transition: color 0.2s;
   cursor: pointer;
+  pointer-events: all;
 
   &:hover {
     color: var(--text-secondary);
