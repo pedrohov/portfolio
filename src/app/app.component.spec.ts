@@ -9,6 +9,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { GoogleAnalyticsService } from "@core/google-analytics.service";
 import { Subject } from "rxjs";
 import { AppComponent } from "./app.component";
+import { ThemeTogglerComponent } from "./theme-toggler/theme-toggler.component";
 
 describe("AppComponent", () => {
   const routerEventsSubject = new Subject<RouterEvent>();
@@ -18,7 +19,7 @@ describe("AppComponent", () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [AppComponent],
+      declarations: [AppComponent, ThemeTogglerComponent],
       providers: [
         {
           provide: Router,
