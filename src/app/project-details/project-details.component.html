@@ -11,7 +11,7 @@
     /></svg
 ></a>
 
-<div class="container">
+<div class="container" *ngIf="project$ | async as project">
   <header>
     <h1>{{ project.title }}</h1>
   </header>
@@ -45,4 +45,4 @@
   </section>
 </div>
 
-<next-project *ngIf="nextProject" [project]="nextProject"></next-project>
+<next-project [project]="nextProject$ | async"></next-project>

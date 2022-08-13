@@ -5,11 +5,12 @@ import {
   transition,
   trigger,
 } from "@angular/animations";
-import { Component, ElementRef, ViewChild } from "@angular/core";
+import { Component, ElementRef, OnDestroy, ViewChild } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { SideProject } from "@core/models/side-project";
 import { SideProjectService } from "@core/side-project.service";
-import { Observable } from "rxjs";
+import { Observable, Subject } from "rxjs";
+import { takeUntil } from "rxjs/operators";
 
 @Component({
   selector: "app-home",
@@ -25,10 +26,11 @@ import { Observable } from "rxjs";
     ]),
   ],
 })
-export class HomeComponent {
+export class HomeComponent implements OnDestroy {
   @ViewChild("projectsSection", { read: ElementRef })
   projectsSection!: ElementRef;
   sideProjects$: Observable<SideProject[]>;
+  private isComponentDestroyed$ = new Subject<boolean>();
 
   constructor(
     private sideProjectService: SideProjectService,
@@ -41,10 +43,17 @@ export class HomeComponent {
   }
 
   getSideProjects(): void {
-    this.sideProjects$ = this.sideProjectService.getSideProjects();
+    this.sideProjects$ = this.sideProjectService
+      .getSideProjects()
+      .pipe(takeUntil(this.isComponentDestroyed$));
   }
 
   goToProjects(): void {
     this.projectsSection.nativeElement.scrollIntoView({ behavior: "smooth" });
+  }
+
+  ngOnDestroy(): void {
+    this.isComponentDestroyed$.next(true);
+    this.isComponentDestroyed$.complete();
   }
 }

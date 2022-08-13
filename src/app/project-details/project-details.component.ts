@@ -1,21 +1,20 @@
-import { Component } from "@angular/core";
+import { Component, OnDestroy } from "@angular/core";
 import { Title } from "@angular/platform-browser";
 import { ActivatedRoute, NavigationEnd, Router } from "@angular/router";
 import { Project } from "@core/models/project";
 import { ProjectService } from "@core/project.service";
-import { Subscription } from "rxjs";
-import { map, filter } from "rxjs/operators";
+import { EMPTY, Observable, Subject } from "rxjs";
+import { catchError, filter, map, takeUntil, tap } from "rxjs/operators";
 
 @Component({
   selector: "app-project-details",
   templateUrl: "./project-details.component.html",
   styleUrls: ["./project-details.component.scss"],
 })
-export class ProjectDetailsComponent {
-  project: Project;
-  nextProject: Project | undefined;
-  selected: String;
-  routeSub: Subscription;
+export class ProjectDetailsComponent implements OnDestroy {
+  project$: Observable<Project>;
+  nextProject$: Observable<Project>;
+  private isComponentDestroyed$ = new Subject<boolean>();
 
   constructor(
     private router: Router,
@@ -23,32 +22,32 @@ export class ProjectDetailsComponent {
     private title: Title,
     private projectService: ProjectService
   ) {
-    this.routeSub = router.events
+    router.events
       .pipe(
         filter((e) => e instanceof NavigationEnd),
-        map((e) => e as NavigationEnd)
+        map((e) => e as NavigationEnd),
+        takeUntil(this.isComponentDestroyed$)
       )
-      .subscribe(() => {
-        this.getProject();
-      });
+      .subscribe(() => this.getProject());
   }
 
   getProject(): void {
     const title = this.route.snapshot.paramMap.get("title");
-    this.projectService.getProject(title).subscribe(
-      (project: Project) => {
-        this.project = project;
-        this.selected = this.project.thumbnail;
+    this.project$ = this.projectService.getProject(title).pipe(
+      tap((project: Project) => {
         this.title.setTitle(`${project.title} - Pedro Veloso`);
-        this.projectService
-          .getNextProjectAfter(this.project)
-          .subscribe((nextProject) => {
-            this.nextProject = nextProject;
-          });
-      },
-      () => {
+        this.nextProject$ = this.projectService.getNextProjectAfter(project);
+      }),
+      catchError(() => {
         this.router.navigate(["/"]);
-      }
+        return EMPTY;
+      }),
+      takeUntil(this.isComponentDestroyed$)
     );
+  }
+
+  ngOnDestroy(): void {
+    this.isComponentDestroyed$.next(true);
+    this.isComponentDestroyed$.complete();
   }
 }

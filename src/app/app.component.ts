@@ -10,7 +10,7 @@ import { filter, map } from "rxjs/operators";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnDestroy {
-  routeSub: Subscription;
+  private routeSub!: Subscription;
 
   constructor(router: Router, googleAnalyticsService: GoogleAnalyticsService) {
     googleAnalyticsService.setupGoogleAnalytics();
