@@ -37,9 +37,10 @@ export class ThemeService {
 
   switch(theme?: Theme) {
     theme =
-      theme || this.themeChangeBehavior.value == Theme.Light
+      theme ||
+      (this.themeChangeBehavior.value == Theme.Light
         ? Theme.Dark
-        : Theme.Light;
+        : Theme.Light);
     if (theme == this.themeChangeBehavior.value) return;
     const previousTheme = this.themeChangeBehavior.value;
     this.renderer.addClass(this.document.body, `${theme}-theme`);
