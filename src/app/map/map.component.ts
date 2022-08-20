@@ -4,21 +4,19 @@ import {
   ElementRef,
   Input,
   OnDestroy,
-  ViewChild,
 } from "@angular/core";
 import { select } from "d3";
 import { geoMercator, geoPath } from "d3-geo";
-import { fromEvent, Subject, Subscription } from "rxjs";
+import { fromEvent, Subject } from "rxjs";
 import { takeUntil, throttleTime } from "rxjs/operators";
-import pastagem_data from "src/assets/maps/pastagem.json";
+import pastagemData from "src/assets/maps/pastagem.json";
 
 @Component({
   selector: "map",
-  templateUrl: "./map.component.html",
+  template: "",
   styleUrls: ["./map.component.scss"],
 })
 export class MapComponent implements AfterViewInit, OnDestroy {
-  @ViewChild("container") containerRef!: ElementRef;
   @Input() colors: string[] = [
     "#292929",
     "#3A518A",
@@ -31,6 +29,8 @@ export class MapComponent implements AfterViewInit, OnDestroy {
 
   private isComponentDestroyed$ = new Subject<boolean>();
 
+  constructor(private elementRef: ElementRef) {}
+
   ngAfterViewInit(): void {
     this.create();
 
@@ -38,7 +38,7 @@ export class MapComponent implements AfterViewInit, OnDestroy {
       .pipe(throttleTime(300), takeUntil(this.isComponentDestroyed$))
       .subscribe(() => this.create()),
       fromEvent(window, "mousemove")
-        .pipe(throttleTime(200), takeUntil(this.isComponentDestroyed$))
+        .pipe(throttleTime(100), takeUntil(this.isComponentDestroyed$))
         .subscribe((event: MouseEvent) => {
           this.onMouseMove(event);
         });
@@ -58,8 +58,8 @@ export class MapComponent implements AfterViewInit, OnDestroy {
   private create(): void {
     const previousChart = select(`#map-${this.chartId}`);
     if (previousChart) previousChart.remove();
-    if (!this.containerRef) return;
-    const el = this.containerRef.nativeElement;
+    if (!this.elementRef.nativeElement) return;
+    const el = this.elementRef.nativeElement;
     const height = el.offsetHeight;
     const width = el.offsetWidth;
     const svg = select(el)
@@ -90,14 +90,14 @@ export class MapComponent implements AfterViewInit, OnDestroy {
 
     const projection = geoMercator().fitSize(
       [width, height],
-      pastagem_data as any
+      pastagemData as any
     );
     const pathGenerator = geoPath().projection(projection) as any;
 
     const featureGroup = svg
       .append("g")
       .selectAll("path")
-      .data(pastagem_data.features)
+      .data(pastagemData.features)
       .join("path")
       .attr("d", pathGenerator)
       .attr("fill", "url(#animate-gradient)")

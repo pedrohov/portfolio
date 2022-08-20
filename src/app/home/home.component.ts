@@ -38,11 +38,7 @@ export class HomeComponent implements OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.getSideProjects();
     this.title.setTitle("Portfolio - Pedro Veloso");
-  }
-
-  getSideProjects(): void {
     this.sideProjects$ = this.sideProjectService
       .getSideProjects()
       .pipe(takeUntil(this.isComponentDestroyed$));
