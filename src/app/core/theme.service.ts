@@ -13,6 +13,8 @@ export class ThemeService {
   private themeChangeBehavior = new BehaviorSubject<Theme>(Theme.Light);
   private changeTheme = this._changeTheme.bind(this);
 
+  onThemeChange = this.themeChangeBehavior.asObservable();
+
   get theme() {
     return this.themeChangeBehavior.value;
   }

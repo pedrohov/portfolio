@@ -1,10 +1,5 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Input,
-  OnDestroy,
-} from "@angular/core";
+import { AfterViewInit, Component, ElementRef, OnDestroy } from "@angular/core";
+import { Theme, ThemeService } from "@core/theme.service";
 import { select } from "d3";
 import { geoMercator, geoPath } from "d3-geo";
 import { fromEvent, Subject } from "rxjs";
@@ -17,10 +12,10 @@ import pastagemData from "src/assets/maps/pastagem.json";
   styleUrls: ["./map.component.scss"],
 })
 export class MapComponent implements AfterViewInit, OnDestroy {
-  @Input() colors: string[] = [
-    "#292929",
-    "#3A518A",
-  ]; /* ["#46105F", "#3A518A", "#59AE6F", "#f02ab3"]*/
+  colors: Record<Theme, string[]> = {
+    [Theme.Dark]: ["#292929", "#3A518A"],
+    [Theme.Light]: ["#46105F", "#3A518A", "#59AE6F", "#f02ab3"],
+  };
 
   private chartId: string = Math.random().toString(36).substring(2);
 
@@ -29,24 +24,30 @@ export class MapComponent implements AfterViewInit, OnDestroy {
 
   private isComponentDestroyed$ = new Subject<boolean>();
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(
+    private elementRef: ElementRef,
+    private themeService: ThemeService
+  ) {}
 
   ngAfterViewInit(): void {
     this.create();
 
     fromEvent(window, "resize")
       .pipe(throttleTime(300), takeUntil(this.isComponentDestroyed$))
-      .subscribe(() => this.create()),
-      fromEvent(window, "mousemove")
-        .pipe(throttleTime(100), takeUntil(this.isComponentDestroyed$))
-        .subscribe((event: MouseEvent) => {
-          this.onMouseMove(event);
-        });
+      .subscribe(() => this.create());
+    fromEvent(window, "mousemove")
+      .pipe(throttleTime(100), takeUntil(this.isComponentDestroyed$))
+      .subscribe((event: MouseEvent) => {
+        this.onMouseMove(event);
+      });
+
+    this.themeService.onThemeChange
+      .pipe(takeUntil(this.isComponentDestroyed$))
+      .subscribe(() => this.create());
   }
 
   onMouseMove(event: MouseEvent): void {
-    const gradient = select(`#animate-gradient`);
-    gradient.attr(
+    select(`#animate-gradient`).attr(
       "x2",
       `${Math.max(
         ((event.screenX + event.screenY) * 50) / window.innerWidth,
@@ -82,10 +83,13 @@ export class MapComponent implements AfterViewInit, OnDestroy {
 
     linearGradient
       .selectAll(".stop")
-      .data(this.colors)
+      .data(this.colors[this.themeService.theme])
       .enter()
       .append("stop")
-      .attr("offset", (_, i) => i / (this.colors.length - 1))
+      .attr(
+        "offset",
+        (_, i) => i / (this.colors[this.themeService.theme].length - 1)
+      )
       .attr("stop-color", (d) => d);
 
     const projection = geoMercator().fitSize(
