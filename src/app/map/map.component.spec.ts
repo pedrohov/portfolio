@@ -51,13 +51,11 @@ describe("HomeComponent", () => {
 
   it("should not create the chart if the container is undefined", () => {
     fixture.detectChanges();
-    component.containerRef = undefined;
     window.dispatchEvent(new Event("resize"));
     expect(document.querySelector("svg")).toBeFalsy();
   });
 
   it("should call onMouseMove after a mousemove event is fired", () => {
-    component.enableEvents = true;
     fixture.detectChanges();
     const mouseMoveSpy = spyOn<any>(component, "onMouseMove").and.callThrough();
     window.dispatchEvent(new Event("mousemove"));
@@ -65,7 +63,6 @@ describe("HomeComponent", () => {
   });
 
   it("should not color a feature on pointer over while fading in", () => {
-    component.enableEvents = true;
     fixture.detectChanges();
     const feature = document.querySelector("path");
     feature.dispatchEvent(new Event("pointerover"));
@@ -75,7 +72,6 @@ describe("HomeComponent", () => {
   });
 
   it("should color a feature on pointer over when not fading in", fakeAsync(() => {
-    component.enableEvents = true;
     fixture.detectChanges();
     tick(1000);
     const feature = document.querySelector("path");
@@ -85,7 +81,6 @@ describe("HomeComponent", () => {
   }));
 
   it("should set the stroke color if the color attribute is provided", () => {
-    component.color = "red";
     fixture.detectChanges();
     const feature = document.querySelector("path");
     expect(feature.getAttribute("stroke")).toEqual("red");

@@ -32,7 +32,6 @@ describe("ProjectDetailsComponent", () => {
     fixture = TestBed.createComponent(ProjectDetailsComponent);
     component = fixture.componentInstance;
     element = fixture.elementRef.nativeElement;
-    component.project = PROJECTS[0];
     router = TestBed.inject(Router);
     activatedRoute = TestBed.inject(ActivatedRoute);
   });
