@@ -59,7 +59,6 @@ export class MapComponent implements AfterViewInit, OnDestroy {
   private create(): void {
     const previousChart = select(`#map-${this.chartId}`);
     if (previousChart) previousChart.remove();
-    if (!this.elementRef.nativeElement) return;
     const el = this.elementRef.nativeElement;
     const height = el.offsetHeight;
     const width = el.offsetWidth;

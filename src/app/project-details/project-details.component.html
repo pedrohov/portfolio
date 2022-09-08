@@ -45,4 +45,6 @@
   </section>
 </div>
 
-<next-project [project]="nextProject$ | async"></next-project>
+<ng-container *ngIf="nextProject$ | async as nextProject">
+  <next-project [project]="nextProject"></next-project>
+</ng-container>
