@@ -1,10 +1,5 @@
 import { CommonModule } from "@angular/common";
-import {
-  ComponentFixture,
-  fakeAsync,
-  TestBed,
-  tick,
-} from "@angular/core/testing";
+import { ComponentFixture, TestBed } from "@angular/core/testing";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { RouterTestingModule } from "@angular/router/testing";
 import { ProjectService } from "@core/project.service";
@@ -49,40 +44,10 @@ describe("HomeComponent", () => {
     expect(chartCreateSpy).toHaveBeenCalled();
   });
 
-  it("should not create the chart if the container is undefined", () => {
-    fixture.detectChanges();
-    window.dispatchEvent(new Event("resize"));
-    expect(document.querySelector("svg")).toBeFalsy();
-  });
-
   it("should call onMouseMove after a mousemove event is fired", () => {
     fixture.detectChanges();
     const mouseMoveSpy = spyOn<any>(component, "onMouseMove").and.callThrough();
     window.dispatchEvent(new Event("mousemove"));
     expect(mouseMoveSpy).toHaveBeenCalled();
-  });
-
-  it("should not color a feature on pointer over while fading in", () => {
-    fixture.detectChanges();
-    const feature = document.querySelector("path");
-    feature.dispatchEvent(new Event("pointerover"));
-    fixture.detectChanges();
-    // TODO: Is it possible to wait for the transition to complete?
-    expect(feature.getAttribute("fill-opacity")).toEqual("0");
-  });
-
-  it("should color a feature on pointer over when not fading in", fakeAsync(() => {
-    fixture.detectChanges();
-    tick(1000);
-    const feature = document.querySelector("path");
-    feature.dispatchEvent(new Event("pointerover"));
-    fixture.detectChanges();
-    expect(feature.getAttribute("fill-opacity")).toEqual("0");
-  }));
-
-  it("should set the stroke color if the color attribute is provided", () => {
-    fixture.detectChanges();
-    const feature = document.querySelector("path");
-    expect(feature.getAttribute("stroke")).toEqual("red");
   });
 });
