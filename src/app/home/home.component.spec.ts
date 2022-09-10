@@ -44,24 +44,6 @@ describe("HomeComponent", () => {
     expect(component).toBeTruthy();
   });
 
-  it("should have a Header", () => {
-    fixture.detectChanges();
-    const header = element.querySelector("h1");
-    expect(header).toBeTruthy();
-    expect(header.innerText).toContain(
-      "Developing GIS apps and visualization tools for geospatial datasets"
-    );
-  });
-
-  it("should have a Subtitle", () => {
-    fixture.detectChanges();
-    const subtitle = element.querySelector("h2") as HTMLElement;
-    expect(subtitle).toBeTruthy();
-    expect(subtitle.innerText).toContain(
-      "Hi! I’m Pedro, I build solutions using the web and other fun stuff."
-    );
-  });
-
   it("should fetch all Side Projects", async () => {
     fixture.detectChanges();
     const projects = await component.sideProjects$.toPromise();
@@ -69,11 +51,6 @@ describe("HomeComponent", () => {
     expect(document.querySelectorAll("[side-project]").length).toBe(
       SIDE_PROJECTS.length
     );
-  });
-
-  it("should change the page title", async () => {
-    fixture.detectChanges();
-    expect(document.title).toBe("Portfolio - Pedro Veloso");
   });
 
   it("should scroll to the projects section", () => {
