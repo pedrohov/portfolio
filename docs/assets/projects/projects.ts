@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
       link: "https://www.agrosatelite.com.br/",
     },
     challenges:
-      "SIMFaz is an ever growing farm monitoring system. The team has lots of ideas for the platform, we also have some clients using parts of the system that are more mature. Creating this product is what feels like doing a heart transplant, you have to keep it alive while making big changes. It is definitely challenging!",
+      "SIMFaz is an ever growing farm monitoring system. The team has lots of ideas for the platform. Our biggest challenge is bringing each new idea to life while maintaining the existing functionalities that bring the most value to our userbase.",
   },
   {
     title: "Cerrado Conservation Mechanism",
@@ -33,7 +33,7 @@ export const PROJECTS: Project[] = [
       link: "https://abiove.org.br/",
     },
     challenges:
-      "The client wanted a way to display some of the geographical data in their landing page. If we put a map taking the entire screen it would feel off. It was challenging trying to figure out how to present all the data in a more interactive way without using tools like openlayers or google maps. In the end, the client loved the end result!",
+      "Abiove wanted a way to display some of the geographical data in their landing page. The initial idea was to have an interactable map taking the entire screen, but we managed to do something much better than that! It was challenging trying to figure out how to present all the data in a more interactive way without using tools like openlayers or google maps. In the end, the client loved the end result!",
   },
   {
     title: "Restoration and Reforestation Observatory Dashboard",
